@@ -1,0 +1,13 @@
+# not sure which one doesn't commit the node modules
+*node_modules
+client/node_modules
+node_modules
+client/node_modules/
+
+#webstorm files
+.idea
+
+# dotenv file
+.env
+*.env
+
