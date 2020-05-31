@@ -2,7 +2,6 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
-import Container from '@material-ui/core/Container';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
@@ -102,8 +101,8 @@ export default function Blog() {
     return (
         <React.Fragment>
             <CssBaseline />
-            <div className={classes.mainContainer}>
-                <Header title="Minternet" sections={sections} />
+            <div className={classes.mainContainer} key={"mainContainer"}>
+                <Header title="Minternet" sections={sections} key={"mainHeader"}/>
                 <main>
                     <MainFeaturedPost post={mainFeaturedPost} />
                     <Grid container spacing={4}>
@@ -122,7 +121,7 @@ export default function Blog() {
                     </Grid>
                 </main>
             </div>
-            <Footer social={footer.social} />
+            <Footer social={footer.social} key={"mainFooter"}/>
         </React.Fragment>
     );
 }
