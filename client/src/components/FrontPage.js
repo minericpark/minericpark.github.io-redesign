@@ -20,19 +20,18 @@ const useStyles = makeStyles((theme) => ({
     mainGrid: {
         marginTop: theme.spacing(3),
     },
+    mainContainer: {
+        width: '80%',
+        margin: '0 auto',
+    },
 }));
 
 const sections = [
-    { title: 'Technology', url: '#' },
-    { title: 'Design', url: '#' },
-    { title: 'Culture', url: '#' },
-    { title: 'Business', url: '#' },
-    { title: 'Politics', url: '#' },
-    { title: 'Opinion', url: '#' },
-    { title: 'Science', url: '#' },
-    { title: 'Health', url: '#' },
-    { title: 'Style', url: '#' },
-    { title: 'Travel', url: '#' },
+    { title: 'Home', url: '#' },
+    { title: 'About Me', url: '#' },
+    { title: 'Projects', url: '#' },
+    { title: 'Blog', url: '#' },
+    { title: 'Documents', url: '#' },
 ];
 
 const mainFeaturedPost = {
@@ -103,8 +102,8 @@ export default function Blog() {
     return (
         <React.Fragment>
             <CssBaseline />
-            <Container maxWidth="lg">
-                <Header title="Blog" sections={sections} />
+            <div className={classes.mainContainer}>
+                <Header title="Minternet" sections={sections} />
                 <main>
                     <MainFeaturedPost post={mainFeaturedPost} />
                     <Grid container spacing={4}>
@@ -122,7 +121,7 @@ export default function Blog() {
                         />
                     </Grid>
                 </main>
-            </Container>
+            </div>
             <Footer social={footer.social} />
         </React.Fragment>
     );
