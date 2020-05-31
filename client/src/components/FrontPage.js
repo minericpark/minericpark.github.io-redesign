@@ -5,7 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import FacebookIcon from '@material-ui/icons/Facebook';
-import TwitterIcon from '@material-ui/icons/Twitter';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import Header from './Header';
 import MainFeaturedPost from './MainFeaturedPost';
 import FeaturedPost from './FeaturedPost';
@@ -83,9 +83,17 @@ const sidebar = {
         { title: 'April 1999', url: '#' },
     ],
     social: [
-        { name: 'GitHub', icon: GitHubIcon },
-        { name: 'Twitter', icon: TwitterIcon },
-        { name: 'Facebook', icon: FacebookIcon },
+        { name: 'GitHub', icon: GitHubIcon, link: "https://github.com/minericpark" },
+        { name: 'LinkedIn', icon: LinkedInIcon, link: "https://www.linkedin.com/in/eric-p-422190128/" },
+        { name: 'Facebook', icon: FacebookIcon, link: "https://www.facebook.com/minericpark/" },
+    ],
+};
+
+const footer = {
+    social: [
+        { name: 'GitHub', icon: GitHubIcon, link: "https://github.com/minericpark" },
+        { name: 'LinkedIn', icon: LinkedInIcon, link: "https://www.linkedin.com/in/eric-p-422190128/" },
+        { name: 'Facebook', icon: FacebookIcon, link: "https://www.facebook.com/minericpark/" },
     ],
 };
 
@@ -115,7 +123,7 @@ export default function Blog() {
                     </Grid>
                 </main>
             </Container>
-            <Footer title="Footer" description="Something here to give the footer a purpose!" />
+            <Footer social={footer.social} />
         </React.Fragment>
     );
 }
