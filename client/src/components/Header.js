@@ -4,8 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
-import Link from '@material-ui/core/Link';
-import Grid from "@material-ui/core/Grid";
+import HeaderNav from './HeaderNav.js';
 
 const useStyles = makeStyles((theme) => ({
     space: {
@@ -16,20 +15,15 @@ const useStyles = makeStyles((theme) => ({
     },
     toolbarLink: {
         padding: theme.spacing(4),
+        transition: "all .5s ease",
+        WebkitTransition: "all .5s ease",
+        MozTransition: "all .5s ease",
     },
 }));
 
 export default function Header(props) {
     const classes = useStyles();
     const { sections } = props;
-
-    function navHover(e) {
-        console.log("hovering over element" + e);
-    }
-
-    function navNoHover(e) {
-        console.log("not hovering over element" + e);
-    }
 
     return (
         <React.Fragment>
@@ -39,21 +33,7 @@ export default function Header(props) {
                 </IconButton>
                 <div className={classes.space} key={"headerDiv"}></div>
                 {sections.map((section) => (
-                    <Grid item key={"header" + section.title}>
-                        <Link
-                            color="inherit"
-                            underline="none"
-                            noWrap
-                            key={section.title}
-                            variant="body1"
-                            href={section.url}
-                            className={classes.toolbarLink}
-                            onMouseEnter={() => navHover(section.title)}
-                            onMouseLeave={() => navNoHover(section.title)}
-                        >
-                            {section.title}
-                        </Link>
-                    </Grid>
+                    <HeaderNav section={section} key={"header" + section.title}/>
                 ))}
             </Toolbar>
         </React.Fragment>
