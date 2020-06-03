@@ -80,11 +80,6 @@ const sidebar = {
         { title: 'May 1999', url: '#' },
         { title: 'April 1999', url: '#' },
     ],
-    social: [
-        { name: 'GitHub', icon: GitHubIcon, link: "https://github.com/minericpark" },
-        { name: 'LinkedIn', icon: LinkedInIcon, link: "https://www.linkedin.com/in/eric-p-422190128/" },
-        { name: 'Facebook', icon: FacebookIcon, link: "https://www.facebook.com/minericpark/" },
-    ],
 };
 
 const footer = {
@@ -116,7 +111,6 @@ export default function Blog() {
                             title={sidebar.title}
                             description={sidebar.description}
                             archives={sidebar.archives}
-                            social={sidebar.social}
                         />
                     </Grid>
                 </main>
