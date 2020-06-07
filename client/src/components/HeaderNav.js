@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Link from '@material-ui/core/Link';
 import Grid from "@material-ui/core/Grid";
+import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
     space: {
@@ -32,19 +33,21 @@ export default function HeaderNav(props) {
 
     return (
         <Grid item key={"nav" + section.title}>
-            <Link
-                color="inherit"
-                underline="none"
-                noWrap
-                key={section.title}
-                variant="body1"
-                href={section.url}
-                className={classes.toolbarLink}
-                onMouseEnter={() => navHover()}
-                onMouseLeave={() => navNoHover()}
-            >
-                {section.title}
-            </Link>
+            <Typography className={classes.toolbar}>
+                <Link
+                    color="primary"
+                    underline="none"
+                    noWrap
+                    className={classes.toolbarLink}
+                    key={section.title}
+                    variant="body1"
+                    href={section.url}
+                    onMouseEnter={() => navHover()}
+                    onMouseLeave={() => navNoHover()}
+                >
+                    {section.title}
+                </Link>
+            </Typography>
         </Grid>
     );
 }

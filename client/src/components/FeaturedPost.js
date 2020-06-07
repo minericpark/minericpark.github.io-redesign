@@ -31,16 +31,16 @@ export default function FeaturedPost(props) {
                 <Card className={classes.card}>
                     <div className={classes.cardDetails}>
                         <CardContent>
-                            <Typography component="h2" variant="h5">
+                            <Typography component="h2" variant="h5" color="primary">
                                 {post.title}
                             </Typography>
-                            <Typography variant="subtitle1" color="textSecondary">
+                            <Typography variant="subtitle1" color="secondary">
                                 {post.date}
                             </Typography>
-                            <Typography variant="subtitle1" paragraph>
+                            <Typography variant="subtitle1" paragraph color="primary">
                                 {post.description}
                             </Typography>
-                            <Typography variant="subtitle1" color="primary">
+                            <Typography variant="subtitle1" color="secondary">
                                 Continue reading...
                             </Typography>
                         </CardContent>
