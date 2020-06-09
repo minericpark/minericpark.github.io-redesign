@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
     },
     toolbar: {
-        borderBottom: `1px solid ${theme.palette.divider}`,
+
     },
     toolbarLink: {
         padding: theme.spacing(4),

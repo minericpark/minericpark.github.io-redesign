@@ -7,7 +7,6 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import Header from './Header';
 import MainFeaturedPost from './MainFeaturedPost';
-import FeaturedPost from './FeaturedPost';
 import BlogPreview from './BlogPreview';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
@@ -39,25 +38,6 @@ const mainFeaturedPost = {
     imgText: 'main image description',
     linkText: 'Continue reading…',
 };
-
-const featuredPosts = [
-    {
-        title: 'Featured post',
-        date: 'Nov 12',
-        description:
-            'This is a wider card with supporting text below as a natural lead-in to additional content.',
-        image: 'https://source.unsplash.com/random',
-        imageText: 'Image Text',
-    },
-    {
-        title: 'Post title',
-        date: 'Nov 11',
-        description:
-            'This is a wider card with supporting text below as a natural lead-in to additional content.',
-        image: 'https://source.unsplash.com/random',
-        imageText: 'Image Text',
-    },
-];
 
 const posts = [post1];
 
@@ -98,11 +78,6 @@ export default function Blog() {
                 <Header title="Minternet" sections={sections} key={"mainHeader"}/>
                 <main>
                     <MainFeaturedPost post={mainFeaturedPost} />
-                    <Grid container spacing={4}>
-                        {featuredPosts.map((post) => (
-                            <FeaturedPost key={post.title} post={post} />
-                        ))}
-                    </Grid>
                     <Grid container spacing={5} className={classes.mainGrid}>
                         <BlogPreview title="Test" posts={posts} />
                         <Sidebar
