@@ -4,6 +4,9 @@ import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 
+//Note: Modified markdown files to be a javascript file that returns a string object
+//Original markdown format does not work with markdowns with create-react-app thus must use javascript objects instead
+
 const styles = (theme) => ({
     listItem: {
         marginTop: theme.spacing(1),

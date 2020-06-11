@@ -10,7 +10,7 @@ import MainFeaturedPost from './MainFeaturedPost';
 import BlogPreview from './BlogPreview';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
-import post1 from './blogposts/blog-post.1.md';
+import post1 from './blogposts/blog-post.1.md.js';
 
 const useStyles = makeStyles((theme) => ({
     mainGrid: {
