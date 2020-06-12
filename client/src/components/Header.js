@@ -4,7 +4,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
+import { Route, NavLink, BrowserRouter as Router } from 'react-router-dom'
 import HeaderNav from './HeaderNav.js';
+import MainPage from "../pages/HomePage";
+import TestPage from "../pages/TestPage";
 
 const useStyles = makeStyles((theme) => ({
     space: {
@@ -32,9 +35,15 @@ export default function Header(props) {
                     <SearchIcon />
                 </IconButton>
                 <div className={classes.space} key={"headerDiv"}></div>
-                {sections.map((section) => (
-                    <HeaderNav section={section} key={"header" + section.title}/>
-                ))}
+                <Router>
+                    {sections.map((section) => (
+                        <NavLink to={section.url} >
+                            <HeaderNav section={section} key={"header" + section.title}/>
+                        </NavLink>
+                    ))}
+                    <Route exact path="/home" component={MainPage} />
+                    <Route path="/test" component={TestPage} />
+                </Router>
             </Toolbar>
         </React.Fragment>
     );

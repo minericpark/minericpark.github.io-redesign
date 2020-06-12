@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Link from '@material-ui/core/Link';
+import MenuItem from "@material-ui/core/MenuItem";
 import Grid from "@material-ui/core/Grid";
 import Typography from '@material-ui/core/Typography';
 
@@ -34,19 +34,16 @@ export default function HeaderNav(props) {
     return (
         <Grid item key={"nav" + section.title}>
             <Typography className={classes.toolbar}>
-                <Link
-                    color="primary"
-                    underline="none"
+                <MenuItem
                     noWrap
                     className={classes.toolbarLink}
                     key={section.title}
                     variant="body1"
-                    href={section.url}
                     onMouseEnter={() => navHover()}
                     onMouseLeave={() => navNoHover()}
                 >
                     {section.title}
-                </Link>
+                </MenuItem>
             </Typography>
         </Grid>
     );

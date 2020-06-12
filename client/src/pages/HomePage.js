@@ -2,14 +2,9 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import Header from '../components/Header';
 import MainFeaturedPost from '../components/MainFeaturedPost';
 import BlogPreview from '../components/BlogPreview';
 import Sidebar from '../components/Sidebar';
-import Footer from '../components/Footer';
 import post1 from '../components/blogposts/blog-post.1.md.js';
 
 const useStyles = makeStyles((theme) => ({
@@ -21,14 +16,6 @@ const useStyles = makeStyles((theme) => ({
         margin: '0 auto',
     },
 }));
-
-const sections = [
-    { title: 'Home', url: '#' },
-    { title: 'About Me', url: '#' },
-    { title: 'Projects', url: '#' },
-    { title: 'Blog', url: '#' },
-    { title: 'Documents', url: '#' },
-];
 
 const mainFeaturedPost = {
     title: 'Title of a longer featured blog post',
@@ -60,14 +47,6 @@ const sidebar = {
     ],
 };
 
-const footer = {
-    social: [
-        { name: 'GitHub', icon: GitHubIcon, link: "https://github.com/minericpark" },
-        { name: 'LinkedIn', icon: LinkedInIcon, link: "https://www.linkedin.com/in/eric-p-422190128/" },
-        { name: 'Facebook', icon: FacebookIcon, link: "https://www.facebook.com/minericpark/" },
-    ],
-};
-
 export default function Blog() {
     const classes = useStyles();
 
@@ -75,7 +54,6 @@ export default function Blog() {
         <React.Fragment>
             <CssBaseline />
             <div className={classes.mainContainer} key={"mainContainer"}>
-                <Header title="Minternet" sections={sections} key={"mainHeader"}/>
                 <main>
                     <MainFeaturedPost post={mainFeaturedPost} />
                     <Grid container spacing={5} className={classes.mainGrid}>
@@ -88,7 +66,6 @@ export default function Blog() {
                     </Grid>
                 </main>
             </div>
-            <Footer social={footer.social} key={"mainFooter"}/>
         </React.Fragment>
     );
 }
