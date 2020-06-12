@@ -5,12 +5,12 @@ import Grid from '@material-ui/core/Grid';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import Header from './Header';
-import MainFeaturedPost from './MainFeaturedPost';
-import BlogPreview from './BlogPreview';
-import Sidebar from './Sidebar';
-import Footer from './Footer';
-import post1 from './blogposts/blog-post.1.md.js';
+import Header from '../components/Header';
+import MainFeaturedPost from '../components/MainFeaturedPost';
+import BlogPreview from '../components/BlogPreview';
+import Sidebar from '../components/Sidebar';
+import Footer from '../components/Footer';
+import post1 from '../components/blogposts/blog-post.1.md.js';
 
 const useStyles = makeStyles((theme) => ({
     mainGrid: {
