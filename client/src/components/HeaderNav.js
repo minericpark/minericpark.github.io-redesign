@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
 
     },
     toolbarLink: {
-        padding: theme.spacing(4),
+        padding: theme.spacing(3),
         transition: "all .5s ease",
         WebkitTransition: "all .5s ease",
         MozTransition: "all .5s ease",

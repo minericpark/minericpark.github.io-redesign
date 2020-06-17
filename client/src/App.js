@@ -1,14 +1,16 @@
 import React from 'react';
 import './App.css';
 import FrontPage from "./pages/HomePage";
+import TestPage from "./pages/TestPage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import FacebookIcon from "@material-ui/icons/Facebook";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const sections = [
-    { title: 'Home', url: '/home' },
+    { title: 'Home', url: '/' },
     { title: 'About Me', url: '#' },
     { title: 'Projects', url: '#' },
     { title: 'Blog', url: '#' },
@@ -26,11 +28,23 @@ const footer = {
 
 function App() {
   return (
-    <div >
-      <Header title="Minternet" sections={sections} key={"mainHeader"}/>
-      <Footer social={footer.social} key={"mainFooter"}/>
-    </div>
+      <React.Fragment>
+          <Router>
+              <Header title="Minternet" sections={sections} key={"mainHeader"}/>
+              <Switch>
+                  <Route exact path="/" component={FrontPage} />
+                  <Route path="/test" component={TestPage} />
+              </Switch>
+              <Footer social={footer.social} key={"mainFooter"}/>
+          </Router>
+      </React.Fragment>
   );
 }
 
 export default App;
+
+/*
+*     <div >
+      <Header title="Minternet" sections={sections} key={"mainHeader"}/>
+      <FrontPage/>
+    </div>*/
