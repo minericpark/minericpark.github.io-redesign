@@ -14,9 +14,6 @@ const useStyles = makeStyles((theme) => ({
     toolbar: {
         borderBottom: `1px solid ${theme.palette.divider}`,
     },
-    toolbarLink: {
-
-    },
 }));
 
 export default function Header(props) {
@@ -34,7 +31,6 @@ export default function Header(props) {
                     color="textSecondary"
                     noWrap
                     underline="none"
-                    className={classes.toolbarLink}
                     key={section.title}
                     variant="body2"
                     href={section.url}>

@@ -8,11 +8,9 @@ const useStyles = makeStyles((theme) => ({
     space: {
         flexGrow: 1,
     },
-    toolbar: {
-
-    },
     toolbarLink: {
-        padding: theme.spacing(3),
+        padding: theme.spacing(2.5),
+        marginLeft: theme.spacing(4),
         transition: "all .5s ease",
         WebkitTransition: "all .5s ease",
         MozTransition: "all .5s ease",
@@ -33,7 +31,7 @@ export default function HeaderNav(props) {
 
     return (
         <Grid item key={"nav" + section.title}>
-            <Typography className={classes.toolbar}>
+            <Typography>
                 <MenuItem
                     noWrap
                     className={classes.toolbarLink}

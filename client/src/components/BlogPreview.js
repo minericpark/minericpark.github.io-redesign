@@ -11,6 +11,9 @@ const useStyles = makeStyles((theme) => ({
         ...theme.typography.body2,
         padding: theme.spacing(3, 0),
     },
+    header: {
+        marginTop: theme.spacing(3),
+    },
 }));
 
 export default function BlogPreview(props) {
@@ -19,7 +22,7 @@ export default function BlogPreview(props) {
 
     return (
         <Grid item xs={12} md={8}>
-            <Typography variant="h6" gutterBottom>
+            <Typography variant="h6" gutterBottom className={classes.header}>
                 {title}
             </Typography>
             <Divider />
