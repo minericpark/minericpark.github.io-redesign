@@ -9,11 +9,11 @@ import post1 from '../components/blogposts/blog-post.1.md.js';
 
 const useStyles = makeStyles((theme) => ({
     mainGrid: {
-        marginTop: theme.spacing(3),
     },
     mainContainer: {
         width: '80%',
         margin: '0 auto',
+        minHeight: '95vh',
     },
 }));
 
@@ -47,7 +47,7 @@ const sidebar = {
     ],
 };
 
-export default function Blog() {
+export default function FrontPage() {
     const classes = useStyles();
 
     return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import FrontPage from "./pages/HomePage";
-import TestPage from "./pages/TestPage";
+import AboutPage from "./pages/AboutPage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import GitHubIcon from "@material-ui/icons/GitHub";
@@ -11,11 +11,10 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const sections = [
     { title: 'Home', url: '/' },
-    { title: 'About Me', url: '#' },
+    { title: 'About Me', url: '/about' },
     { title: 'Projects', url: '#' },
     { title: 'Blog', url: '#' },
     { title: 'Documents', url: '#' },
-    { title: 'Test', url: '/test' },
 ];
 
 const footer = {
@@ -33,7 +32,7 @@ function App() {
               <Header title="Minternet" sections={sections} key={"mainHeader"}/>
               <Switch>
                   <Route exact path="/" component={FrontPage} />
-                  <Route path="/test" component={TestPage} />
+                  <Route path="/about" component={AboutPage} />
               </Switch>
               <Footer social={footer.social} key={"mainFooter"}/>
           </Router>
