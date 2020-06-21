@@ -18,11 +18,11 @@ const useStyles = makeStyles((theme) => ({
 
 export default function BlogPost(props) {
     const classes = useStyles();
-    const { posts, title, height, width } = props;
+    const { posts, title, xsNum, mdNum } = props;
 
     return (
-        <Grid item xs={height} md={width}>
-            <Typography variant="h6" gutterBottom className={classes.header}>
+        <Grid item xs={xsNum} md={mdNum}>
+            <Typography variant="h6" gutterBottom className={classes.header} color="primary">
                 {title}
             </Typography>
             <Divider />
@@ -38,4 +38,6 @@ export default function BlogPost(props) {
 BlogPost.propTypes = {
     posts: PropTypes.array,
     title: PropTypes.string,
+    xsNum: PropTypes.string,
+    mdNum: PropTypes.string,
 };

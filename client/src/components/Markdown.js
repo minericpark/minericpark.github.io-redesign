@@ -20,13 +20,14 @@ const options = {
             props: {
                 gutterBottom: true,
                 variant: 'h5',
+                color: 'primary'
             },
         },
-        h2: { component: Typography, props: { gutterBottom: true, variant: 'h6' } },
-        h3: { component: Typography, props: { gutterBottom: true, variant: 'subtitle1' } },
+        h2: { component: Typography, props: { gutterBottom: true, variant: 'h6', color: 'primary' } },
+        h3: { component: Typography, props: { gutterBottom: true, variant: 'subtitle1', color: 'primary' } },
         h4: {
             component: Typography,
-            props: { gutterBottom: true, variant: 'caption', paragraph: true },
+            props: { gutterBottom: true, variant: 'caption', paragraph: true, color: 'secondary' },
         },
         p: { component: Typography, props: { paragraph: true } },
         a: { component: Link },
@@ -36,6 +37,7 @@ const options = {
                     <Typography component="span" {...props} />
                 </li>
             )),
+            props: { color: 'secondary' }
         },
     },
 };

@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     mainContainer: {
         width: '80%',
         margin: '0 auto',
-        minHeight: '95vh',
+        minHeight: '85vh',
     },
 }));
 
@@ -57,7 +57,7 @@ export default function FrontPage() {
                 <main>
                     <MainFeaturedPost post={mainFeaturedPost} />
                     <Grid container spacing={5} className={classes.mainGrid}>
-                        <BlogPost title="Test" posts={posts} height="12" width="8"/>
+                        <BlogPost title="Test" posts={posts} xsNum="12" mdNum="8"/>
                         <Sidebar
                             title={sidebar.title}
                             description={sidebar.description}
