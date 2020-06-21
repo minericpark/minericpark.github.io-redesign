@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import MainFeaturedPost from '../components/MainFeaturedPost';
-import BlogPreview from '../components/BlogPreview';
+import BlogPost from '../components/BlogPost';
 import Sidebar from '../components/Sidebar';
 import post1 from '../components/blogposts/blog-post.1.md.js';
 
@@ -57,7 +57,7 @@ export default function FrontPage() {
                 <main>
                     <MainFeaturedPost post={mainFeaturedPost} />
                     <Grid container spacing={5} className={classes.mainGrid}>
-                        <BlogPreview title="Test" posts={posts} />
+                        <BlogPost title="Test" posts={posts} height="12" width="8"/>
                         <Sidebar
                             title={sidebar.title}
                             description={sidebar.description}

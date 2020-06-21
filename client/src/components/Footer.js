@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-//BlogPreview footer structure
+//BlogPost footer structure
 export default function Footer(props) {
     const classes = useStyles();
     const { social } = props;

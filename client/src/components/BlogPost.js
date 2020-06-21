@@ -9,19 +9,19 @@ import Markdown from './Markdown';
 const useStyles = makeStyles((theme) => ({
     markdown: {
         ...theme.typography.body2,
-        padding: theme.spacing(3, 0),
+        padding: theme.spacing(2, 0),
     },
     header: {
         marginTop: theme.spacing(3),
     },
 }));
 
-export default function BlogPreview(props) {
+export default function BlogPost(props) {
     const classes = useStyles();
-    const { posts, title } = props;
+    const { posts, title, height, width } = props;
 
     return (
-        <Grid item xs={12} md={8}>
+        <Grid item xs={height} md={width}>
             <Typography variant="h6" gutterBottom className={classes.header}>
                 {title}
             </Typography>
@@ -35,7 +35,7 @@ export default function BlogPreview(props) {
     );
 }
 
-BlogPreview.propTypes = {
+BlogPost.propTypes = {
     posts: PropTypes.array,
     title: PropTypes.string,
 };

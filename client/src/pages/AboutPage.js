@@ -1,9 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import MainFeaturedPost from "../components/MainFeaturedPost";
 import Grid from "@material-ui/core/Grid";
-import BlogPreview from "../components/BlogPreview";
+import BlogPost from "../components/BlogPost";
 import post from "../components/blogposts/about-me.md";
 
 const useStyles = makeStyles((theme) => ({
@@ -24,9 +23,7 @@ export default function AboutPage() {
             <CssBaseline />
             <div className={classes.mainContainer} key={"mainContainer"}>
                 <main>
-                    <Grid container spacing={5} className={classes.mainGrid}>
-                        <BlogPreview title="About Me" posts={posts} />
-                    </Grid>
+                    <BlogPost title="About Me" posts={posts} height="12" width="12"/>
                 </main>
             </div>
         </React.Fragment>
