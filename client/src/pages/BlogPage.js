@@ -1,11 +1,11 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Grid from '@material-ui/core/Grid';
-import MainFeaturedPost from '../components/MainFeaturedPost';
-import BlogPost from '../components/BlogPost';
-import Sidebar from '../components/Sidebar';
-import post1 from '../components/blogposts/blog-post.1.md.js';
+import React from "react";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import MainFeaturedPost from "../components/MainFeaturedPost";
+import Grid from "@material-ui/core/Grid";
+import BlogPost from "../components/BlogPost";
+import Sidebar from "../components/Sidebar";
+import {makeStyles} from "@material-ui/core/styles";
+import post1 from "../components/blogposts/blog-post.1.md";
 
 const useStyles = makeStyles((theme) => ({
     mainGrid: {
@@ -17,19 +17,10 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const mainFeaturedPost = {
-    title: 'Title of a longer featured blog post',
-    description:
-        "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
-    image: 'https://source.unsplash.com/random',
-    imgText: 'main image description',
-    linkText: 'Continue reading…',
-};
-
 const sidebar = {
-    title: 'About',
+    title: 'What\'s up with Min?',
     description:
-        'Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.',
+        'I\'m currently preparing my full redesign of my personal website',
     archives: [
         { title: 'March 2020', url: '#' },
         { title: 'February 2020', url: '#' },
@@ -47,7 +38,7 @@ const sidebar = {
 
 const posts = [post1];
 
-export default function FrontPage() {
+export default function BlogPage() {
     const classes = useStyles();
 
     return (
@@ -55,7 +46,6 @@ export default function FrontPage() {
             <CssBaseline />
             <div className={classes.mainContainer} key={"mainContainer"}>
                 <main>
-                    <MainFeaturedPost post={mainFeaturedPost} />
                     <Grid container spacing={5} className={classes.mainGrid}>
                         <BlogPost title="Test" posts={posts} xsNum="12" mdNum="8"/>
                         <Sidebar

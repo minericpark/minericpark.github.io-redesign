@@ -8,6 +8,7 @@ import Link from '@material-ui/core/Link';
 
 const useStyles = makeStyles((theme) => ({
     sidebarAboutBox: {
+        marginTop: theme.spacing(2),
         padding: theme.spacing(2),
         backgroundColor: theme.palette.grey[200],
     },
