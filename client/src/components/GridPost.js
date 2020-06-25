@@ -56,7 +56,7 @@ function ProjectCard(props) {
 
 export default function GridPost(props) {
     const classes = useStyles();
-    const { posts, images, title, xsNum, mdNum } = props;
+    const { posts, title, xsNum, mdNum } = props;
 
     return (
         <Grid item xs={xsNum} md={mdNum}>
@@ -73,7 +73,6 @@ export default function GridPost(props) {
 
 GridPost.propTypes = {
     posts: PropTypes.array,
-    images: PropTypes.array,
     title: PropTypes.string,
     xsNum: PropTypes.string,
     mdNum: PropTypes.string,

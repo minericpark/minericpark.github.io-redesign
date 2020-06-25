@@ -1,6 +1,5 @@
 import React from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import MainFeaturedPost from "../components/MainFeaturedPost";
 import Grid from "@material-ui/core/Grid";
 import BlogPost from "../components/BlogPost";
 import Sidebar from "../components/Sidebar";
