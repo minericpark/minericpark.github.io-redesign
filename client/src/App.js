@@ -2,7 +2,8 @@ import React from 'react';
 import './App.css';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import FrontPage from "./pages/HomePage";
+import LandingPage from "./pages/LandingPage";
+import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ProjectPage from "./pages/ProjectPage";
 import BlogPage from "./pages/BlogPage";
@@ -13,7 +14,7 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const sections = [
-    { title: 'Home', url: '/' },
+    { title: 'Home', url: '/home' },
     { title: 'About Me', url: '/about' },
     { title: 'Projects', url: '/projects' },
     { title: 'Blog', url: '/blog' },
@@ -34,7 +35,8 @@ function App() {
           <Router>
               <Header title="Minternet" sections={sections} key={"mainHeader"}/>
               <Switch>
-                  <Route exact path="/" component={FrontPage} />
+                  <Route exact path="/" component={LandingPage} />
+                  <Route path="/home" component={HomePage} />
                   <Route path="/about" component={AboutPage} />
                   <Route path="/projects" component={ProjectPage} />
                   <Route path="/blog" component={BlogPage} />

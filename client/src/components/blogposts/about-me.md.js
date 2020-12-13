@@ -6,8 +6,7 @@ export default `
 
 # Hey!
 
-My name is **Eric Park**, though my friends call me **Min**, a short form to my Korean traditional name Min Seo.
-
+My name is **Eric Park**, though my friends call me **Min**, a short form to my Korean traditional name Min Seo.<br />
 I am a **Software Engineering Co-op** student at the *University of Guelph*, expecting graduation in the Winter of 2023.
 
 ## Personal
@@ -22,7 +21,7 @@ I'm not the most sociable person, but I'm always down to talk about anything wit
 activities and maintain my productivity and abilities in consideration of my long-term goals, so I can seem pretty distant from everything.
 Otherwise, I'm often out dancing somewhere, taking class, freestyle-sessioning, or in rehearsal. I'll also be working on funny projects
 that can teach me some relevant skills with friends out of enjoyment.
-
+<br />
 
 ## Career
 
