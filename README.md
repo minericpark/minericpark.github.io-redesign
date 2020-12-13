@@ -42,5 +42,8 @@
 
 ![Initial profession page](https://i.ibb.co/JmfKCJq/Profession-page.png)
 
+### Why was this iteration scrapped?
+- Ultimately decided despite enjoying the direction I was following, felt like my newfound ideas and experience I took away from this attempt can lead me to design and develop something better (appearance-wise) and cleaner (code-wise)
+
 ### License / Warning
-- This is code is written by multiple members within the development team.
+- This is code is written by Eric Minseo Park
