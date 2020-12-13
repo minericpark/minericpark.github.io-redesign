@@ -2,6 +2,7 @@
 
 - Web application (undetermined of type of architecture) -> used to update and redesign personal webpage
 - Development ceased
+- Based off of Blog page example provided by Material UI
 - Intention was to bring same aesthetic as current webpage that is up ('minericpark.github.io')
 
 ### Core Technical Concepts/Inspiration
