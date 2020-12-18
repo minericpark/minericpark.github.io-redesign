@@ -5,6 +5,15 @@ import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import Grid from "@material-ui/core/Grid";
 
+const useStyles = makeStyles((theme) => ({
+    footer: {
+        backgroundColor: theme.palette.background.paper,
+        padding: theme.spacing(2),
+        bottom: 0,
+        position: "relative",
+    },
+}));
+
 //Copyright content for footer
 function Copyright() {
     return (
@@ -33,15 +42,6 @@ function Socials(props) {
         </Grid>
     );
 }
-
-const useStyles = makeStyles((theme) => ({
-    footer: {
-        backgroundColor: theme.palette.background.paper,
-        padding: theme.spacing(2),
-        bottom: 0,
-        position: "relative",
-    },
-}));
 
 //BlogPost footer structure
 export default function Footer(props) {

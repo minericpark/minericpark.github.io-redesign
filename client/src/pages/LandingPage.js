@@ -12,8 +12,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const mainFeaturedPost = {
-    title: 'Hi, welcome to my website!',
-    image: 'https://source.unsplash.com/random'
+    title: 'Welcome to my website.',
+    image: 'https://images.pexels.com/photos/4067774/pexels-photo-4067774.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    imageRef: 'Landing Page Image (By Lisa Fotios)',
 };
 
 export default function FrontPage() {

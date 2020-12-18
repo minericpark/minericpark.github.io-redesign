@@ -32,8 +32,8 @@ const footer = {
 function App() {
   return (
       <React.Fragment>
+          <Header title="Minternet" sections={sections} key={"mainHeader"}/>
           <Router>
-              <Header title="Minternet" sections={sections} key={"mainHeader"}/>
               <Switch>
                   <Route exact path="/" component={LandingPage} />
                   <Route path="/home" component={HomePage} />
@@ -42,10 +42,19 @@ function App() {
                   <Route path="/blog" component={BlogPage} />
                   <Route path="/profession" component={ProfessionPage} />
               </Switch>
-              <Footer social={footer.social} key={"mainFooter"}/>
           </Router>
+          <Footer social={footer.social} key={"mainFooter"}/>
       </React.Fragment>
   );
 }
+
+/**
+ *
+ <Route path="/home" component={HomePage} />
+ <Route path="/about" component={AboutPage} />
+ <Route path="/projects" component={ProjectPage} />
+ <Route path="/blog" component={BlogPage} />
+ <Route path="/profession" component={ProfessionPage} />
+ */
 
 export default App;

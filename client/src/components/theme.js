@@ -1,20 +1,25 @@
 import { createMuiTheme } from '@material-ui/core';
+import '../App.css';
+
+const mainFont = "'Quicksand', sans-serif";
+const secondaryFont = "'Raleway', sans-serif";
 
 const theme = createMuiTheme({
     palette: {
         primary: {
-            main: '#002f30',
+            main: '#a89c94ff',
             contrastText: '#fff',
-        },
+        }, //#f0f6f7ff
         secondary: {
-            main: '#2c7873',
+            main: '#a89c94ff',
             contrastText: '#fff',
         },
     },
     typography: {
         fontFamily: [
-            'Arial',
-        ].join(','),
+            mainFont,
+            secondaryFont
+        ],
     },
     status: {
         warning: '#bf360c',
