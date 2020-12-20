@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
+import {hexToRgb, makeStyles} from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import Grid from "@material-ui/core/Grid";
+import { motion } from "framer-motion";
+import {IconContext} from "react-icons";
+import theme from "./theme";
 
 const useStyles = makeStyles((theme) => ({
     footer: {
@@ -34,9 +37,13 @@ function Socials(props) {
         <Grid container direction="row" justify="flex-start" alignItems="center" spacing={1} key={"socials"}>
             {social.map((network) => (
                 <Grid item key={"socials" + network.name}>
-                    <Link display="block" variant="body1" href={network.link} key={network.name}>
-                        <network.icon />
-                    </Link>
+                    <motion.div whileHover={{ scale: 1.3 }}>
+                        <IconContext.Provider value={{ style: {fontSize: '23px', color: hexToRgb(theme.palette.primary.main)}}}>
+                            <Link display="block" variant="body1" href={network.link} key={network.name}>
+                                <network.icon />
+                            </Link>
+                        </IconContext.Provider>
+                    </motion.div>
                 </Grid>
             ))}
         </Grid>

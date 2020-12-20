@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
+import {hexToRgb, makeStyles} from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import SearchIcon from '@material-ui/icons/Search';
 import Link from '@material-ui/core/Link';
 import HeaderNav from './HeaderNav.js';
+import { motion } from "framer-motion";
+import { GiAcorn } from "react-icons/gi";
+import { IconContext } from "react-icons";
+import theme from "./theme";
 
 const useStyles = makeStyles((theme) => ({
     space: {
@@ -22,9 +24,11 @@ export default function Header(props) {
 
     return (
         <Toolbar className={classes.toolbar} component="nav" variant="regular" key={"header"}>
-            <IconButton className={classes.mainIcon} key={"headerIcon"}>
-                <SearchIcon />
-            </IconButton>
+            <motion.div key={"headerIcon"} whileHover={{ rotate: 360, transition: {duration: 1} }}>
+                <IconContext.Provider value={{ style: {fontSize: '35px', color: hexToRgb(theme.palette.primary.main)}}}>
+                    <GiAcorn />
+                </IconContext.Provider>
+            </motion.div>
             <div className={classes.space} key={"headerDiv"}></div>
             {sections.map((section) => (
                 <Link

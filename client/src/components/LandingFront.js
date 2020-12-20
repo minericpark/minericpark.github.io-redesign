@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
+import Fade from "@material-ui/core/Fade";
 
 const useStyles = makeStyles((theme) => ({
     landingFront: {
@@ -39,9 +40,11 @@ export default function LandingFront(props) {
             <Grid container spacing={0} align="center" justify="center" direction="column" style={{minHeight: '50vh'}}>
                 <Grid item>
                     <div className={classes.mainFrontContent}>
-                        <Typography component="h1" variant="h3" color="inherit" align='center'>
-                            {post.title}
-                        </Typography>
+                        <Fade in timeout={{ enter: 2200, exit: 1000 }}>
+                            <Typography component="h1" variant="h3" color="inherit" align='center'>
+                                {post.title}
+                            </Typography>
+                        </Fade>
                     </div>
                 </Grid>
             </Grid>
