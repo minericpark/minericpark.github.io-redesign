@@ -34,19 +34,21 @@ function Copyright() {
 function Socials(props) {
     const { social } = props;
     return (
-        <Grid container direction="row" justify="flex-start" alignItems="center" spacing={1} key={"socials"}>
-            {social.map((network) => (
-                <Grid item key={"socials" + network.name}>
-                    <motion.div whileHover={{ scale: 1.3 }}>
-                        <IconContext.Provider value={{ style: {fontSize: '23px', color: hexToRgb(theme.palette.primary.main)}}}>
-                            <Link display="block" variant="body1" href={network.link} key={network.name}>
-                                <network.icon />
-                            </Link>
-                        </IconContext.Provider>
-                    </motion.div>
-                </Grid>
-            ))}
-        </Grid>
+        <React.Fragment>
+            <Grid container direction="row" justify="flex-start" alignItems="center" spacing={1} key={"socials"}>
+                {social.map((network) => (
+                    <Grid item key={"socials" + network.name}>
+                        <motion.div whileHover={{ scale: 1.3 }}>
+                            <IconContext.Provider value={{ style: {fontSize: '23px', color: 'inherit'}}}>
+                                <Link display="block" variant="body1" href={network.link} key={network.name}>
+                                    <network.icon />
+                                </Link>
+                            </IconContext.Provider>
+                        </motion.div>
+                    </Grid>
+                ))}
+            </Grid>
+        </React.Fragment>
     );
 }
 

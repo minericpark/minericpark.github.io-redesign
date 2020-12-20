@@ -26,26 +26,27 @@ const footer = {
         { name: 'GitHub', icon: AiFillGithub, link: "https://github.com/minericpark" },
         { name: 'LinkedIn', icon: AiFillLinkedin, link: "https://www.linkedin.com/in/eric-p-422190128/" },
         { name: 'Mail', icon: AiFillMail, link: "mailto: epark03@uoguelph.ca" },
-    ]
+    ],
 };
 
 function App() {
-  return (
-      <React.Fragment>
-          <Header title="Minternet" sections={header.sections} key={"mainHeader"}/>
-          <Router>
-              <Switch>
-                  <Route exact path="/" component={LandingPage} />
-                  <Route path="/home" component={HomePage} />
-                  <Route path="/about" component={AboutPage} />
-                  <Route path="/projects" component={ProjectPage} />
-                  <Route path="/blog" component={BlogPage} />
-                  <Route path="/profession" component={ProfessionPage} />
-              </Switch>
-          </Router>
-          <Footer social={footer.social} key={"mainFooter"}/>
-      </React.Fragment>
-  );
+
+    return (
+        <React.Fragment>
+            <Header title="Minternet" sections={header.sections} key={"mainHeader"}/>
+            <Router>
+                <Switch>
+                    <Route exact path="/" component={LandingPage} />
+                    <Route path="/home" component={HomePage} />
+                    <Route path="/about" component={AboutPage} />
+                    <Route path="/projects" component={ProjectPage} />
+                    <Route path="/blog" component={BlogPage} />
+                    <Route path="/profession" component={ProfessionPage} />
+                </Switch>
+            </Router>
+            <Footer social={footer.social} key={"mainFooter"}/>
+        </React.Fragment>
+    );
 }
 
 export default App;

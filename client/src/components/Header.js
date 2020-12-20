@@ -8,14 +8,16 @@ import { motion } from "framer-motion";
 import { GiAcorn } from "react-icons/gi";
 import { IconContext } from "react-icons";
 import theme from "./theme";
+import AppBar from "@material-ui/core/AppBar";
 
 const useStyles = makeStyles((theme) => ({
     space: {
         flexGrow: 1,
     },
-    toolbar: {
-        borderBottom: `1px solid ${theme.palette.divider}`,
+    appbarMain: {
+        backgroundColor: theme.palette.primary.contrastText,
     },
+    offset: theme.mixins.toolbar,
 }));
 
 export default function Header(props) {
@@ -23,25 +25,30 @@ export default function Header(props) {
     const { sections } = props;
 
     return (
-        <Toolbar className={classes.toolbar} component="nav" variant="regular" key={"header"}>
-            <motion.div key={"headerIcon"} whileHover={{ rotate: 360, transition: {duration: 1} }}>
-                <IconContext.Provider value={{ style: {fontSize: '35px', color: hexToRgb(theme.palette.primary.main)}}}>
-                    <GiAcorn />
-                </IconContext.Provider>
-            </motion.div>
-            <div className={classes.space} key={"headerDiv"}></div>
-            {sections.map((section) => (
-                <Link
-                    color="textSecondary"
-                    noWrap
-                    underline="none"
-                    key={section.title}
-                    variant="body2"
-                    href={section.url}>
-                    <HeaderNav section={section} key={"header" + section.title}/>
-                </Link>
-            ))}
-        </Toolbar>
+        <React.Fragment>
+            <AppBar className={classes.appbarMain}>
+                <Toolbar component="nav" variant="regular" key={"header"}>
+                    <motion.div key={"headerIcon"} whileHover={{ rotate: 360, transition: {duration: 1} }}>
+                        <IconContext.Provider value={{ style: {fontSize: '35px', color: theme.palette.primary.main}}}>
+                            <GiAcorn />
+                        </IconContext.Provider>
+                    </motion.div>
+                    <div className={classes.space} key={"headerDiv"}></div>
+                    {sections.map((section) => (
+                        <Link
+                            color="primary"
+                            noWrap
+                            underline="none"
+                            key={section.title}
+                            variant="body2"
+                            href={section.url}>
+                            <HeaderNav section={section} key={"header" + section.title}/>
+                        </Link>
+                    ))}
+                </Toolbar>
+            </AppBar>
+            <div className={classes.offset} />
+        </React.Fragment>
     );
 }
 

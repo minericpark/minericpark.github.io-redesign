@@ -25,7 +25,7 @@ export default function FrontPage() {
             <CssBaseline />
             <div className={classes.mainContainer} key={"mainContainer"}>
                 <main>
-                    <LandingFront post={mainFeaturedPost} />
+                    <LandingFront className={classes.landingFront} post={mainFeaturedPost}/>
                 </main>
             </div>
         </React.Fragment>
