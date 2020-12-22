@@ -3,6 +3,7 @@
 - Web application (undetermined of type of architecture) -> used to update and redesign personal webpage
 - Currently in development
 - Planning on bringing over same aesthetic as previous webpage
+- Based off of Material UI Blog Example: 
 
 ### Core Technical Concepts/Inspiration
 - Created to further understand and learn React Native framework
@@ -18,17 +19,14 @@
 ### Installation
 - cd client
 - npm install
-- npm install @material-ui/core
-- npm install @material-ui/icons
-- npm install --save react-router-dom
-- npm install markdown-to-jsx
 - npm start
-
 
 ### Tools, Frameworks, APIs, Libraries
 - React Native
 - React Router
 - Material UI
+- React Icons
+- Motion API
 
 ### License / Warning
-- This is code is written by multiple members within the development team.
+- This is code is written by Eric Minseo Park

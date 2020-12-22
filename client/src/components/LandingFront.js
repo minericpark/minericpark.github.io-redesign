@@ -1,36 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
+import Fade from "@material-ui/core/Fade";
+import Link from "@material-ui/core/Link";
+import {motion} from "framer-motion";
+import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles((theme) => ({
-    landingFront: {
-        position: 'relative',
-        backgroundColor: theme.palette.grey[800],
-        color: theme.palette.common.white,
-        marginBottom: theme.spacing(2),
-        backgroundImage: 'url()',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center',
-        minHeight: '100vh'
-    },
-    overlay: {
-        position: 'absolute',
-        top: 0,
-        bottom: 0,
-        right: 0,
-        left: 0,
-        backgroundColor: 'rgba(0,0,0,.3)',
-    },
     mainFrontContent: {
         position: 'relative',
-        padding: theme.spacing(3),
-        [theme.breakpoints.up('md')]: {
-            padding: theme.spacing(6),
-            paddingRight: 0,
+    },
+    videoBackground: {
+        position: 'absolute',
+        width: '100%',
+        left: '50%',
+        top: '50%',
+        height: '100%',
+        objectFit: 'cover',
+        transform: 'translate(-50%, -50%)',
+        zIndex: '-1',
+    },
+    videoBackgroundCredit: {
+        color: theme.palette.primary.contrastText,
+        opacity: '50%',
+        textAlign: 'center',
+        margin: '5px',
+    },
+    videoBackgroundCreditLink: {
+        '&:hover': {
+            color: theme.palette.primary.lighterMain,
         },
     },
 }));
@@ -40,22 +40,61 @@ export default function LandingFront(props) {
     const { post } = props;
 
     return (
-        <Paper className={classes.landingFront} style={{ backgroundImage: `url(${post.image})` }}>
-            {<img style={{ display: 'none' }} src={post.image} alt={post.imageText} />}
-            <div className={classes.overlay} />
-            <Grid container>
+        <div>
+            <VideoBackground post={post}/>
+            <Grid container spacing={0} align="center" justify="center" direction="column" style={{minHeight: '50vh'}}>
                 <Grid item>
                     <div className={classes.mainFrontContent}>
-                        <Typography component="h1" variant="h3" color="inherit" gutterBottom>
-                            {post.title}
-                        </Typography>
+                        <Fade in timeout={{ enter: 2200, exit: 1000 }}>
+                            <Box className={classes.videoBackgroundCredit}>
+                                <Typography component="h1" variant="h3" align='center'>
+                                    {post.title}
+                                </Typography>
+                                <Typography component="h2" variant="body2" key={"videoBackgroundCredit"}>
+                                    {'Background by '}
+                                    <Link className={classes.videoBackgroundCreditLink} color='inherit' href="https://www.instagram.com/studiogoindol/?hl=en" key={"videoBackgroundCreditLink"} underline={'none'}>
+                                        Studio Goindol
+                                    </Link>
+                                </Typography>
+                            </Box>
+                        </Fade>
                     </div>
                 </Grid>
             </Grid>
-        </Paper>
+        </div>
+    );
+}
+
+function VideoBackground(props) {
+    const classes = useStyles();
+    const { post } = props;
+
+    return (
+        <div>
+            <video className={classes.videoBackground} id="background-video" loop autoPlay muted playsInline disablePictureInPicture>
+                <source src={post.video} type="video/mp4"/>
+                Your device does not support playing 'video/mp4' videos
+            </video>
+        </div>
     );
 }
 
 LandingFront.propTypes = {
     post: PropTypes.object,
 };
+
+/**
+ <Paper className={classes.landingFront} style={{ backgroundImage: `url(${post.image})` }}>
+ <Grid container spacing={0} align="center" justify="center" direction="column" style={{minHeight: '50vh'}}>
+ <Grid item>
+ <div className={classes.mainFrontContent}>
+ <Fade in timeout={{ enter: 2200, exit: 1000 }}>
+ <Typography component="h1" variant="h3" color="inherit" align='center'>
+ {post.title}
+ </Typography>
+ </Fade>
+ </div>
+ </Grid>
+ </Grid>
+ </Paper>
+ */

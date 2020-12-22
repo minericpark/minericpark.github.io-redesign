@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
         width: '80%',
         margin: '0 auto',
         minHeight: '85vh',
+        display: 'flex',
     },
 }));
 

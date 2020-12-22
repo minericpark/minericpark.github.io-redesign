@@ -4,6 +4,17 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import Grid from "@material-ui/core/Grid";
+import { motion } from "framer-motion";
+import {IconContext} from "react-icons";
+
+const useStyles = makeStyles((theme) => ({
+    footer: {
+        backgroundColor: theme.palette.background.paper,
+        padding: theme.spacing(2),
+        bottom: 0,
+        position: "relative",
+    },
+}));
 
 //Copyright content for footer
 function Copyright() {
@@ -22,26 +33,23 @@ function Copyright() {
 function Socials(props) {
     const { social } = props;
     return (
-        <Grid container direction="row" justify="flex-start" alignItems="center" spacing={1} key={"socials"}>
-            {social.map((network) => (
-                <Grid item key={"socials" + network.name}>
-                    <Link display="block" variant="body1" href={network.link} key={network.name}>
-                        <network.icon />
-                    </Link>
-                </Grid>
-            ))}
-        </Grid>
+        <React.Fragment>
+            <Grid container direction="row" justify="flex-start" alignItems="center" spacing={1} key={"socials"}>
+                {social.map((network) => (
+                    <Grid item key={"socials" + network.name}>
+                        <motion.div whileHover={{ scale: 1.3 }}>
+                            <IconContext.Provider value={{ style: {fontSize: '23px', color: 'inherit'}}}>
+                                <Link display="block" variant="body1" href={network.link} key={network.name}>
+                                    <network.icon />
+                                </Link>
+                            </IconContext.Provider>
+                        </motion.div>
+                    </Grid>
+                ))}
+            </Grid>
+        </React.Fragment>
     );
 }
-
-const useStyles = makeStyles((theme) => ({
-    footer: {
-        backgroundColor: theme.palette.background.paper,
-        padding: theme.spacing(2),
-        bottom: 0,
-        position: "relative",
-    },
-}));
 
 //BlogPost footer structure
 export default function Footer(props) {
