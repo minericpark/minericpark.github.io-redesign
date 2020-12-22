@@ -5,13 +5,9 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Fade from "@material-ui/core/Fade";
 import Link from "@material-ui/core/Link";
-import {motion} from "framer-motion";
 import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles((theme) => ({
-    mainFrontContent: {
-        position: 'relative',
-    },
     videoBackground: {
         position: 'absolute',
         width: '100%',
@@ -21,6 +17,9 @@ const useStyles = makeStyles((theme) => ({
         objectFit: 'cover',
         transform: 'translate(-50%, -50%)',
         zIndex: '-1',
+    },
+    mainFrontContent: {
+        position: 'relative',
     },
     videoBackgroundCredit: {
         color: theme.palette.primary.contrastText,
