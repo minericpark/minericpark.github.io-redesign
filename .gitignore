@@ -7,7 +7,14 @@ client/node_modules/
 #webstorm files
 .idea
 
-# dotenv file
+# dotenv files
 .env
 *.env
 
+# scripting files
+.sh
+*.sh
+
+# text files
+.txt
+*.txt

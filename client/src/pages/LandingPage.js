@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
     mainContainer: {
         width: '100%',
         margin: '0 auto',
-        minHeight: '85vh',
+        minHeight: '89vh',
     },
 }));
 
@@ -15,6 +15,8 @@ const mainFeaturedPost = {
     title: 'Welcome to my website.',
     image: 'https://images.pexels.com/photos/4067774/pexels-photo-4067774.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     imageRef: 'Landing Page Image (By Lisa Fotios)',
+    video: '/videos/studiogoindol(itsokayevenifyoucantseetheend).mp4',
+    videoRef: 'Landing Page Video (By Studio Goindol)',
 };
 
 export default function FrontPage() {

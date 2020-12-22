@@ -11,6 +11,11 @@ const useStyles = makeStyles((theme) => ({
     toolbarLink: {
         padding: theme.spacing(2.5),
         marginLeft: theme.spacing(4),
+        color: theme.palette.primary.lighterMain,
+        '&:hover': {
+            color: theme.palette.primary.main,
+            backgroundColor: 'inherit',
+        },
     },
 }));
 

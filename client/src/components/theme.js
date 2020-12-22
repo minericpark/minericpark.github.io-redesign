@@ -7,12 +7,16 @@ const secondaryFont = "'Raleway', sans-serif";
 const theme = createMuiTheme({
     palette: {
         primary: {
-            main: '#a89c94ff',
+            main: '#8e8d8a',
+            lighterMain: '#ddd8d5',
             contrastText: '#fff',
         }, //#f0f6f7ff
         secondary: {
             main: '#a89c94ff',
             contrastText: '#fff',
+        },
+        tertiary: {
+            main: '#f0f6f7ff',
         },
     },
     typography: {

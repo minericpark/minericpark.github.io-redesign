@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {hexToRgb, makeStyles} from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import Link from '@material-ui/core/Link';
 import HeaderNav from './HeaderNav.js';
@@ -30,19 +30,20 @@ export default function Header(props) {
                 <Toolbar component="nav" variant="regular" key={"header"}>
                     <motion.div key={"headerIcon"} whileHover={{ rotate: 360, transition: {duration: 1} }}>
                         <IconContext.Provider value={{ style: {fontSize: '35px', color: theme.palette.primary.main}}}>
-                            <GiAcorn />
+                            <Link underline="none" href="/">
+                                <GiAcorn />
+                            </Link>
                         </IconContext.Provider>
                     </motion.div>
                     <div className={classes.space} key={"headerDiv"}></div>
                     {sections.map((section) => (
                         <Link
-                            color="primary"
                             noWrap
                             underline="none"
                             key={section.title}
                             variant="body2"
                             href={section.url}>
-                            <HeaderNav section={section} key={"header" + section.title}/>
+                            <HeaderNav section={section} key={"link" + section.title}/>
                         </Link>
                     ))}
                 </Toolbar>
