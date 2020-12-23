@@ -18,7 +18,6 @@ const options = {
         h1: {
             component: Typography,
             props: {
-                gutterBottom: true,
                 variant: 'h5',
                 color: 'primary'
             },
@@ -42,6 +41,8 @@ const options = {
     },
 };
 
-export default function Markdown(props) {
+function Markdown(props) {
     return <ReactMarkdown options={options} {...props} />;
 }
+
+export default Markdown;

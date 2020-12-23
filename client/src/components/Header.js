@@ -11,22 +11,22 @@ import theme from "./theme";
 import AppBar from "@material-ui/core/AppBar";
 
 const useStyles = makeStyles((theme) => ({
+    root: {
+        backgroundColor: theme.palette.primary.contrastText,
+    },
     space: {
         flexGrow: 1,
-    },
-    appbarMain: {
-        backgroundColor: theme.palette.primary.contrastText,
     },
     offset: theme.mixins.toolbar,
 }));
 
-export default function Header(props) {
+function Header(props) {
     const classes = useStyles();
     const { sections } = props;
 
     return (
         <React.Fragment>
-            <AppBar className={classes.appbarMain}>
+            <AppBar className={classes.root}>
                 <Toolbar component="nav" variant="regular" key={"header"}>
                     <motion.div key={"headerIcon"} whileHover={{ rotate: 360, transition: {duration: 1} }}>
                         <IconContext.Provider value={{ style: {fontSize: '35px', color: theme.palette.primary.main}}}>
@@ -52,6 +52,8 @@ export default function Header(props) {
         </React.Fragment>
     );
 }
+
+export default Header;
 
 Header.propTypes = {
     sections: PropTypes.array,

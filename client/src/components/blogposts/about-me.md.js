@@ -1,9 +1,5 @@
 export default `
 
-<img src="images/personal2.jpg"
-     alt="Personal Image"
-     style="float: left; margin-right: 25px; width: 30%; height: 30%" />
-
 # Hey!
 
 My name is **Eric Park**, though my friends call me **Min**, a short form to my Korean traditional name Min Seo.<br />

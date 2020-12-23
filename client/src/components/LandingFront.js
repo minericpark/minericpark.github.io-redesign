@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
+import {AnimatePresence, motion, useCycle} from "framer-motion";
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import Fade from "@material-ui/core/Fade";
 import Link from "@material-ui/core/Link";
 import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles((theme) => ({
+    mainFrontContent: {
+        position: 'relative',
+    },
     videoBackground: {
         position: 'absolute',
         width: '100%',
@@ -18,14 +21,13 @@ const useStyles = makeStyles((theme) => ({
         transform: 'translate(-50%, -50%)',
         zIndex: '-1',
     },
-    mainFrontContent: {
-        position: 'relative',
-    },
-    videoBackgroundCredit: {
+    mainText: {
         color: theme.palette.primary.contrastText,
-        opacity: '50%',
         textAlign: 'center',
         margin: '5px',
+    },
+    altText: {
+
     },
     videoBackgroundCreditLink: {
         '&:hover': {
@@ -34,7 +36,58 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function LandingFront(props) {
+function VideoBackground(props) {
+    const classes = useStyles();
+    const { post } = props;
+
+    return (
+        <div key="VideoBackground">
+            <video className={classes.videoBackground} id="background-video" disablePictureInPicture controlsList="nodownload" loop autoPlay muted playsInline>
+                <source src={post.video} type="video/mp4"/>
+                Your device does not support playing 'video/mp4' videos
+            </video>
+        </div>
+    );
+}
+
+function ChangingTitle(props) {
+    const classes = useStyles();
+    const { titles } = props;
+    const [currentText, setCurrentText] = useCycle(...titles);
+    const TEXT_CHANGE_TIME_MS = 6000;
+
+    useEffect(() => {
+        const timer = setTimeout(setCurrentText, TEXT_CHANGE_TIME_MS);
+        return () => clearTimeout(timer);
+    }, [currentText, setCurrentText]);
+
+    return (
+        <AnimatePresence exitBeforeEnter>
+            <motion.div key={currentText} className={classes.altText} initial={{ opacity: 0 }} exit={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{duration: 1.5}}>
+                <Typography component="h1" variant="h3" align='center'>
+                    {currentText}
+                </Typography>
+            </motion.div>
+        </AnimatePresence>
+    );
+}
+
+function VideoBackgroundCredit() {
+    const classes = useStyles();
+
+    return (
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{duration: 1.5}}>
+            <Typography variant="caption" key={"videoBackgroundCredit"}>
+                {'Background by '}
+                <Link className={classes.videoBackgroundCreditLink} color='inherit' href="https://www.instagram.com/studiogoindol/?hl=en" key={"videoBackgroundCreditLink"} underline={'none'}>
+                    Studio Goindol
+                </Link>
+            </Typography>
+        </motion.div>
+    );
+}
+
+function LandingFront(props) {
     const classes = useStyles();
     const { post } = props;
 
@@ -44,19 +97,10 @@ export default function LandingFront(props) {
             <Grid container spacing={0} align="center" justify="center" direction="column" style={{minHeight: '50vh'}}>
                 <Grid item>
                     <div className={classes.mainFrontContent}>
-                        <Fade in timeout={{ enter: 2200, exit: 1000 }}>
-                            <Box className={classes.videoBackgroundCredit}>
-                                <Typography component="h1" variant="h3" align='center'>
-                                    {post.title}
-                                </Typography>
-                                <Typography component="h2" variant="body2" key={"videoBackgroundCredit"}>
-                                    {'Background by '}
-                                    <Link className={classes.videoBackgroundCreditLink} color='inherit' href="https://www.instagram.com/studiogoindol/?hl=en" key={"videoBackgroundCreditLink"} underline={'none'}>
-                                        Studio Goindol
-                                    </Link>
-                                </Typography>
-                            </Box>
-                        </Fade>
+                        <Box className={classes.mainText}>
+                            <ChangingTitle titles={post.titles}/>
+                            <VideoBackgroundCredit />
+                        </Box>
                     </div>
                 </Grid>
             </Grid>
@@ -64,36 +108,8 @@ export default function LandingFront(props) {
     );
 }
 
-function VideoBackground(props) {
-    const classes = useStyles();
-    const { post } = props;
-
-    return (
-        <div>
-            <video className={classes.videoBackground} id="background-video" loop autoPlay muted playsInline disablePictureInPicture>
-                <source src={post.video} type="video/mp4"/>
-                Your device does not support playing 'video/mp4' videos
-            </video>
-        </div>
-    );
-}
+export default LandingFront;
 
 LandingFront.propTypes = {
     post: PropTypes.object,
 };
-
-/**
- <Paper className={classes.landingFront} style={{ backgroundImage: `url(${post.image})` }}>
- <Grid container spacing={0} align="center" justify="center" direction="column" style={{minHeight: '50vh'}}>
- <Grid item>
- <div className={classes.mainFrontContent}>
- <Fade in timeout={{ enter: 2200, exit: 1000 }}>
- <Typography component="h1" variant="h3" color="inherit" align='center'>
- {post.title}
- </Typography>
- </Fade>
- </div>
- </Grid>
- </Grid>
- </Paper>
- */

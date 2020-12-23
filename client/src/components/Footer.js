@@ -6,14 +6,17 @@ import Link from '@material-ui/core/Link';
 import Grid from "@material-ui/core/Grid";
 import { motion } from "framer-motion";
 import {IconContext} from "react-icons";
+import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles((theme) => ({
-    footer: {
+    root: {
         backgroundColor: theme.palette.background.paper,
-        padding: theme.spacing(2),
         bottom: 0,
-        position: "relative",
     },
+    footer: {
+        position: "relative",
+        padding: theme.spacing(2),
+    }
 }));
 
 //Copyright content for footer
@@ -32,6 +35,7 @@ function Copyright() {
 //Socials + Links for footer
 function Socials(props) {
     const { social } = props;
+
     return (
         <React.Fragment>
             <Grid container direction="row" justify="flex-start" alignItems="center" spacing={1} key={"socials"}>
@@ -51,24 +55,26 @@ function Socials(props) {
     );
 }
 
-//BlogPost footer structure
-export default function Footer(props) {
+//BlogPosts footer structure
+function Footer(props) {
     const classes = useStyles();
     const { social } = props;
 
     return (
-        <footer className={classes.footer} key={"footer"}>
-            <Grid container direction="row" justify="space-between" alignItems="center" key={"footerGrid"}>
+        <div className={classes.root} key={"footer"}>
+            <Box className={classes.footer} component={Grid} boxShadow={3} container direction="row" justify="space-between" alignItems="center" key={"footerGrid"}>
                 <Grid item key={"footerSocials"}>
                     <Socials social={social}/>
                 </Grid>
                 <Grid item key={"footerCopyright"}>
                     <Copyright />
                 </Grid>
-            </Grid>
-        </footer>
+            </Box>
+        </div>
     );
 }
+
+export default Footer;
 
 Footer.propTypes = {
     social: PropTypes.array,

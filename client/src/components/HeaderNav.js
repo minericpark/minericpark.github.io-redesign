@@ -5,9 +5,6 @@ import Grid from "@material-ui/core/Grid";
 import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
-    space: {
-        flexGrow: 1,
-    },
     toolbarLink: {
         padding: theme.spacing(2.5),
         marginLeft: theme.spacing(4),
@@ -17,9 +14,12 @@ const useStyles = makeStyles((theme) => ({
             backgroundColor: 'inherit',
         },
     },
+    space: {
+        flexGrow: 1,
+    },
 }));
 
-export default function HeaderNav(props) {
+function HeaderNav(props) {
     const classes = useStyles();
     const { section } = props;
 
@@ -48,3 +48,5 @@ export default function HeaderNav(props) {
         </Grid>
     );
 }
+
+export default HeaderNav;

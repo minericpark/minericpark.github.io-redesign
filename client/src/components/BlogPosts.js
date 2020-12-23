@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default function BlogPost(props) {
+function BlogPosts(props) {
     const classes = useStyles();
     const { posts, title, xsNum, mdNum } = props;
 
@@ -43,7 +43,9 @@ export default function BlogPost(props) {
     );
 }
 
-BlogPost.propTypes = {
+export default BlogPosts;
+
+BlogPosts.propTypes = {
     posts: PropTypes.array,
     title: PropTypes.string,
     xsNum: PropTypes.string,

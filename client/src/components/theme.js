@@ -18,6 +18,11 @@ const theme = createMuiTheme({
         tertiary: {
             main: '#f0f6f7ff',
         },
+        primaryCard: {
+            main: '#8e8d8a',
+            lighterMain: '#ddd8d5',
+            contrastText: '#fff',
+        }
     },
     typography: {
         fontFamily: [

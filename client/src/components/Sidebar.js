@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function Sidebar(props) {
+function Sidebar(props) {
     const classes = useStyles();
     const { archives, description, title } = props;
 
@@ -40,6 +40,8 @@ export default function Sidebar(props) {
         </Grid>
     );
 }
+
+export default Sidebar;
 
 Sidebar.propTypes = {
     description: PropTypes.string,

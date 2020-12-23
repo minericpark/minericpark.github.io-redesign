@@ -54,7 +54,7 @@ function ProjectCard(props) {
     );
 }
 
-export default function GridPost(props) {
+function GridPosts(props) {
     const classes = useStyles();
     const { posts, title, xsNum, mdNum } = props;
 
@@ -71,7 +71,9 @@ export default function GridPost(props) {
     );
 }
 
-GridPost.propTypes = {
+export default GridPosts;
+
+GridPosts.propTypes = {
     posts: PropTypes.array,
     title: PropTypes.string,
     xsNum: PropTypes.string,
