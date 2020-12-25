@@ -1,8 +1,7 @@
 import { createMuiTheme } from '@material-ui/core';
 import '../App.css';
 
-const mainFont = "'Quicksand', sans-serif";
-const secondaryFont = "'Raleway', sans-serif";
+const mainFont = "'Nunito', sans-serif";
 
 const theme = createMuiTheme({
     palette: {
@@ -26,8 +25,7 @@ const theme = createMuiTheme({
     },
     typography: {
         fontFamily: [
-            mainFont,
-            secondaryFont
+            mainFont
         ],
     },
     status: {
