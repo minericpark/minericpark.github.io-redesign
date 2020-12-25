@@ -18,6 +18,9 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
     },
     offset: theme.mixins.toolbar,
+    headerNav: {
+        marginLeft: theme.spacing(4),
+    },
 }));
 
 function Header(props) {
@@ -35,16 +38,18 @@ function Header(props) {
                             </Link>
                         </IconContext.Provider>
                     </motion.div>
-                    <div className={classes.space} key={"headerDiv"}></div>
+                    <div className={classes.space} key={"headerDiv"}/>
                     {sections.map((section) => (
-                        <Link
-                            noWrap
-                            underline="none"
-                            key={section.title}
-                            variant="body2"
-                            href={section.url}>
-                            <HeaderNav section={section} key={"link" + section.title}/>
-                        </Link>
+                        <div className={classes.headerNav}>
+                            <Link
+                                noWrap
+                                underline="none"
+                                key={section.title}
+                                variant="body2"
+                                href={section.url}>
+                                <HeaderNav section={section} key={"link" + section.title}/>
+                            </Link>
+                        </div>
                     ))}
                 </Toolbar>
             </AppBar>

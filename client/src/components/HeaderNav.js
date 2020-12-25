@@ -3,11 +3,11 @@ import { makeStyles } from '@material-ui/core/styles';
 import MenuItem from "@material-ui/core/MenuItem";
 import Grid from "@material-ui/core/Grid";
 import Typography from '@material-ui/core/Typography';
+import Link from "@material-ui/core/Link";
 
 const useStyles = makeStyles((theme) => ({
     toolbarLink: {
         padding: theme.spacing(2.5),
-        marginLeft: theme.spacing(4),
         color: theme.palette.primary.lighterMain,
         '&:hover': {
             color: theme.palette.primary.main,
@@ -37,11 +37,10 @@ function HeaderNav(props) {
                 <MenuItem
                     noWrap
                     className={classes.toolbarLink}
-                    key={section.title}
+                    key={"menu" + section.title}
                     variant="body1"
                     onMouseEnter={() => navHover()}
-                    onMouseLeave={() => navNoHover()}
-                >
+                    onMouseLeave={() => navNoHover()}>
                     {section.title}
                 </MenuItem>
             </Typography>
