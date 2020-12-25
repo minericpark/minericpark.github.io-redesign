@@ -31,7 +31,7 @@ function Header(props) {
         <React.Fragment>
             <AppBar className={classes.root}>
                 <Toolbar component="nav" variant="regular" key={"header"}>
-                    <motion.div key={"headerIcon"} whileHover={{ rotate: 360, transition: {duration: 1} }}>
+                    <motion.div key={"headerIcon"} whileHover={{ rotate: 360, scale: 1.1, transition: {duration: 1} }}>
                         <IconContext.Provider value={{ style: {fontSize: '35px', color: theme.palette.primary.main}}}>
                             <Link underline="none" href="/">
                                 <GiAcorn />
@@ -40,16 +40,15 @@ function Header(props) {
                     </motion.div>
                     <div className={classes.space} key={"headerDiv"}/>
                     {sections.map((section) => (
-                        <div className={classes.headerNav}>
-                            <Link
-                                noWrap
-                                underline="none"
-                                key={section.title}
-                                variant="body2"
-                                href={section.url}>
-                                <HeaderNav section={section} key={"link" + section.title}/>
-                            </Link>
-                        </div>
+                        <Link
+                            className={classes.headerNav}
+                            noWrap
+                            underline="none"
+                            key={section.title}
+                            variant="body2"
+                            href={section.url}>
+                            <HeaderNav section={section} key={"link" + section.title}/>
+                        </Link>
                     ))}
                 </Toolbar>
             </AppBar>
