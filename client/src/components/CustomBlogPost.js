@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -7,45 +7,36 @@ import Divider from '@material-ui/core/Divider';
 import Markdown from './Markdown';
 import Card from "@material-ui/core/Card";
 import { motion, AnimatePresence, useCycle} from "framer-motion";
+import { wrap } from "@popmotion/popcorn";
+import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
     markdown: {
-        ...theme.typography.body2
+        ...theme.typography.body2,
     },
     header: {
         marginTop: theme.spacing(3),
     },
     card: {
-        backgroundColor: theme.palette.common.white,
         padding: theme.spacing(2.5, 2.5),
-        marginTop: theme.spacing(2)
+        marginTop: theme.spacing(2),
+        display: 'flex',
     },
     altImage: {
-        alignContent: 'left',
-        width: '30%',
         height: '30%',
+        width: '30%',
+        display: 'flex',
+    },
+    textDiv: {
+        display: 'flex',
+        justifyContent: 'center',
+        marginLeft: theme.spacing(2),
+    },
+    leftButton: {
+    },
+    rightButton: {
     },
 }));
-
-function ChangingImage(props) {
-    const classes = useStyles();
-    const { images } = props;
-    const [currentImage, setCurrentImage] = useCycle(...images);
-    const IMAGE_CHANGE_TIME_MS = 5000;
-
-    useEffect(() => {
-        const timer = setTimeout(setCurrentImage, IMAGE_CHANGE_TIME_MS);
-        return () => clearTimeout(timer);
-    }, [currentImage, setCurrentImage]);
-
-    return (
-        <AnimatePresence exitBeforeEnter>
-            <motion.div key={currentImage} className={classes.altText} initial={{ opacity: 0 }} exit={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{duration: 1.5}}>
-                <img className={classes.altImage} src={currentImage} alt="Personal Image"/>
-            </motion.div>
-        </AnimatePresence>
-    );
-}
 
 function CustomBlogPost(props) {
     const classes = useStyles();
@@ -57,12 +48,14 @@ function CustomBlogPost(props) {
                 {title}
             </Typography>
             <Divider />
-            <Card className={classes.card}>
-                <ChangingImage images={images}/>
-                <Markdown className={classes.markdown} key={post.substring(0, 40)}>
-                    {post}
-                </Markdown>
-            </Card>
+            <div className={classes.card}>
+                <img className={classes.altImage} src={images[0]} />
+                <div className={classes.textDiv}>
+                    <Markdown className={classes.markdown} key={post.substring(0, 40)}>
+                        {post}
+                    </Markdown>
+                </div>
+            </div>
         </Grid>
     );
 }
