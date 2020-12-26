@@ -20,19 +20,9 @@ const useStyles = makeStyles((theme) => ({
 const sidebar = {
     title: 'What\'s up with Min?',
     description:
-        'I\'m currently preparing my full redesign of my personal website',
+        'I\'m currently redesigning my personal website and preparing for school!',
     archives: [
-        { title: 'March 2020', url: '#' },
-        { title: 'February 2020', url: '#' },
-        { title: 'January 2020', url: '#' },
-        { title: 'November 2019', url: '#' },
-        { title: 'October 2019', url: '#' },
-        { title: 'September 2019', url: '#' },
-        { title: 'August 2019', url: '#' },
-        { title: 'July 2019', url: '#' },
-        { title: 'June 2019', url: '#' },
-        { title: 'May 2019', url: '#' },
-        { title: 'April 2019', url: '#' },
+        { title: 'Website Redesign Repository', url: 'https://github.com/minericpark/minericpark.github.io-redesign' },
     ],
 };
 
@@ -47,7 +37,7 @@ function BlogPage() {
             <div className={classes.root} key={"mainContainer"}>
                 <main>
                     <Grid className={classes.mainGrid} container spacing={5}>
-                        <BlogPosts title="Test" posts={posts} xsNum="12" mdNum="8"/>
+                        <BlogPosts title="Blog" posts={posts} xsNum="12" mdNum="8"/>
                         <Sidebar
                             title={sidebar.title}
                             description={sidebar.description}

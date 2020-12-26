@@ -30,7 +30,7 @@ function Sidebar(props) {
                 <Typography color="primary">{description}</Typography>
             </Paper>
             <Typography color="primary" variant="h6" gutterBottom className={classes.sidebarSection}>
-                Archives
+                Project Archives
             </Typography>
             {archives.map((archive) => (
                 <Link color="secondary" display="block" variant="body1" href={archive.url} key={archive.title}>
