@@ -13,11 +13,10 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const header = {
     sections: [
-        { title: 'Home', url: '/home' },
-        { title: 'About Me', url: '/about' },
-        { title: 'Projects', url: '/projects' },
         { title: 'Blog', url: '/blog' },
+        { title: 'Projects', url: '/projects' },
         { title: 'Profession', url: '/profession' },
+        { title: 'About Me', url: '/about' },
     ],
 };
 
@@ -37,7 +36,6 @@ function App() {
             <Router>
                 <Switch>
                     <Route exact path="/" component={LandingPage} />
-                    <Route path="/home" component={HomePage} />
                     <Route path="/about" component={AboutPage} />
                     <Route path="/projects" component={ProjectPage} />
                     <Route path="/blog" component={BlogPage} />
