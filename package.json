@@ -1,8 +1,11 @@
 {
-  "homepage": "https://minericpark.github.io/react-deploy",
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "npm": "6.14.4",
+    "node": "12.17.0"
+  },
   "dependencies": {
     "@material-ui/core": "^4.11.2",
     "@testing-library/jest-dom": "^4.2.4",
@@ -14,15 +17,16 @@
     "react-dom": "^16.13.1",
     "react-icons": "^4.1.0",
     "react-router": "^5.2.0",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+	"serve": "^11.3.2"
   },
   "scripts": {
-    "predeploy": "npm run build",
-	"deploy": "gh-pages -d build",
-    "start": "react-scripts start",
+    "dev": "react-scripts start",
+	"start": "serve -s build",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+	"heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -42,7 +46,6 @@
   "devDependencies": {
     "@material-ui/icons": "^4.11.2",
     "@popmotion/popcorn": "^0.4.4",
-    "gh-pages": "^3.1.0",
     "react-router-dom": "^5.2.0"
   }
 }
