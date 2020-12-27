@@ -38,6 +38,7 @@
   },
   "devDependencies": {
     "@material-ui/icons": "^4.11.2",
+    "@popmotion/popcorn": "^0.4.4",
     "react-router-dom": "^5.2.0"
   }
 }

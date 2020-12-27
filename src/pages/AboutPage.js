@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     },
     mainGrid: {
         margin: '0px',
-        paddingBottom: '7%',
+        paddingBottom: '5%',
     },
 }));
 

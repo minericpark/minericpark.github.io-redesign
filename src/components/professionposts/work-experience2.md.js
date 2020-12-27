@@ -1,7 +1,6 @@
 export default `
 
 # Software Developer @ NCR
-#### Work environment type: SAFe SCRUM (Agile)
 #### September 2020 - December 2020 in Waterloo, ON
 
 NCR Corporation is an American fintech company that provides

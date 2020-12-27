@@ -1,8 +1,6 @@
 export default `
 
 # Project Intern @ Molla Games
-#### Work environment type: Informal SCRUM (Agile)
-
 #### January 2018 - August 2018 in Mississauga, ON
 
 - Developed iOS/Android game "Color Jiggle" with team in Agile work environment

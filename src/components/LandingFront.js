@@ -54,10 +54,9 @@ function ChangingTitle(props) {
     const classes = useStyles();
     const { titles } = props;
     const [currentText, setCurrentText] = useCycle(...titles);
-    const TEXT_CHANGE_TIME_MS = 6000;
 
     useEffect(() => {
-        const timer = setTimeout(setCurrentText, TEXT_CHANGE_TIME_MS);
+        const timer = setTimeout(setCurrentText, 6000);
         return () => clearTimeout(timer);
     }, [currentText, setCurrentText]);
 
@@ -76,7 +75,7 @@ function VideoBackgroundCredit() {
     const classes = useStyles();
 
     return (
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{duration: 1.5}}>
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 0.9 }} transition={{duration: 1.5}}>
             <Typography variant="caption" key={"videoBackgroundCredit"}>
                 {'Background by '}
                 <Link className={classes.videoBackgroundCreditLink} color='inherit' href="https://www.instagram.com/studiogoindol/?hl=en" key={"videoBackgroundCreditLink"} underline={'none'}>

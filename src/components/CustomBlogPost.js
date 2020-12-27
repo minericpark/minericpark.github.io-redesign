@@ -1,14 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import Markdown from './Markdown';
-import Card from "@material-ui/core/Card";
-import { motion, AnimatePresence, useCycle} from "framer-motion";
-import { wrap } from "@popmotion/popcorn";
-import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
     markdown: {
@@ -49,7 +45,7 @@ function CustomBlogPost(props) {
             </Typography>
             <Divider />
             <div className={classes.card}>
-                <img className={classes.altImage} src={images[0]} />
+                <img className={classes.altImage} src={images[0]} alt={images[0]}/>
                 <div className={classes.textDiv}>
                     <Markdown className={classes.markdown} key={post.substring(0, 40)}>
                         {post}

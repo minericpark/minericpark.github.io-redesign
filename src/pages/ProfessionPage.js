@@ -17,10 +17,12 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const phImg = new Image();
-phImg.src = '/placeholder.png';
+const workportfolioImg1 = new Image();
+const workportfolioImg2 = new Image();
+workportfolioImg1.src = '/images/professions/MollaGamesLogo.png';
+workportfolioImg2.src = '/images/professions/NCRCorporationLogo.png';
 
-const workexperience = [[workportfolio2, phImg], [workportfolio1, phImg]];
+const workexperience = [[workportfolio2, workportfolioImg2], [workportfolio1, workportfolioImg1]];
 
 function ProfessionPage() {
     const classes = useStyles();

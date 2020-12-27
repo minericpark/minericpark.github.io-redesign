@@ -13,6 +13,7 @@ import AppBar from "@material-ui/core/AppBar";
 const useStyles = makeStyles((theme) => ({
     root: {
         backgroundColor: theme.palette.primary.contrastText,
+        fontFamily: theme.typography.fontFamily,
     },
     space: {
         flexGrow: 1,
