@@ -5,6 +5,8 @@ import BlogPosts from "../components/BlogPosts";
 import Sidebar from "../components/Sidebar";
 import {makeStyles} from "@material-ui/core/styles";
 import post1 from "../components/blogposts/blog-post.1.md";
+import post2 from "../components/blogposts/blog-post.2.md";
+import post3 from "../components/blogposts/blog-post.3.md";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -26,7 +28,7 @@ const sidebar = {
     ],
 };
 
-const posts = [post1];
+const posts = [post3, post2, post1];
 
 function BlogPage() {
     const classes = useStyles();

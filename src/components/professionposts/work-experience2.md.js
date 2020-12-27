@@ -25,11 +25,5 @@ also inspiring me to do the same. With a majority of my work term involved in ac
 enough to say I've done a memorable bit of contribution to the SmartLocker project. I'm excited to see it someday being used
 by major bank retailers, and will long remember my involvement with the product.
 
-###Acknowledgement 
-I'd like to give a big thanks to my fellow team members within Spectrum: Nikhil Halwasia, Kanwar Buttar, Vera Kodavati,
-Harneet Kaur, Mayank Seth, Srikanth Mulagundla, Clifford Matthew, Kulvinder Singh, Cole Vander Veen, and of course, to my amazing first mentor: Yuktika Pawha.
-
-#### For more information on my experience: <Link>
-
-
+#### For more information on my experience: <a href="/blog">Blog</a>
 `;
