@@ -9,7 +9,7 @@ export default `
 - Implemented data storage and modification of monsters and NPCs utilizing MySQL and a private database server
 - Wrote unit tests utilizing JUnit framework
 
-Learning outcomes:
+### Learning outcomes:
 
 - Improved Java and CSS knowledge
 - Improved use of OOP principles 

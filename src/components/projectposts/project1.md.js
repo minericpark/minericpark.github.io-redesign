@@ -9,7 +9,7 @@ export default `
 - Passes information like blog posts through Markdown files
 - Tested using Node.js runtime environment
 
-Learning outcomes:
+### Learning outcomes:
 
 - Improved Javascript, CSS and HTML knowledge
 - Learned how to use the React Native framework and Material UI framework

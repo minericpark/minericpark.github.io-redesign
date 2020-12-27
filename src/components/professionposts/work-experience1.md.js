@@ -3,6 +3,8 @@ export default `
 # Project Intern @ Molla Games
 #### January 2018 - August 2018 in Mississauga, ON
 
+Molla Games is a Canadian game studio that primarily develops mobile application games.
+
 - Developed iOS/Android game "Color Jiggle" with team in Agile work environment
 - Designed and tested puzzles by writing data in JSON files
 - Cooperated and maintained daily communication with team through project management tools (GitHub, Trello, Slack)

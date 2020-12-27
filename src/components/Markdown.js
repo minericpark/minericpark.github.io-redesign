@@ -33,10 +33,10 @@ const options = {
         li: {
             component: withStyles(styles)(({ classes, ...props }) => (
                 <li className={classes.listItem}>
-                    <Typography component="span" {...props} />
+                    <Typography {...props} />
                 </li>
             )),
-            props: { color: 'secondary' }
+            props: { color: 'tertiary' }
         },
     },
 };

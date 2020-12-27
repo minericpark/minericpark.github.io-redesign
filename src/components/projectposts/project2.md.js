@@ -10,7 +10,7 @@ export default `
 - Implemented a personally developed parser library written in C that the back-end can access
 - Tested using Node.js runtime environment
 
-Learning outcomes:
+### Learning outcomes:
 
 - Learned Javascript, improved CSS and HTML knowledge
 - Learned how to use the Express framework and jQuery library

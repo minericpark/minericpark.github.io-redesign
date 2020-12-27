@@ -3,7 +3,6 @@ import './App.css';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import LandingPage from "./pages/LandingPage";
-import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ProjectPage from "./pages/ProjectPage";
 import BlogPage from "./pages/BlogPage";
