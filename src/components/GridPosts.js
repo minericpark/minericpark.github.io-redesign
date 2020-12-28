@@ -1,12 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import ButtonBase from "@material-ui/core/ButtonBase";
+import ImageCard from "./subcomponents/ImageCard";
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
-import Paper from "@material-ui/core/Paper";
-import Markdown from './Markdown';
 
 const useStyles = makeStyles((theme) => ({
     img: {
@@ -28,32 +26,6 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function ProjectCard(props) {
-    const classes = useStyles();
-    const { projectDesc, imgSrc } = props;
-
-    return (
-        <Paper className={classes.paper}>
-            <Grid container spacing={2}>
-                <Grid item>
-                    <ButtonBase className={classes.image}>
-                        <img className={classes.img} alt="ProjectImg" src={imgSrc.src} />
-                    </ButtonBase>
-                </Grid>
-                <Grid item xs={12} sm container>
-                    <Grid item xs container direction="column" spacing={2}>
-                        <Grid item xs>
-                            <Markdown key={projectDesc.substring(0, 40)}>
-                                {projectDesc}
-                            </Markdown>
-                        </Grid>
-                    </Grid>
-                </Grid>
-            </Grid>
-        </Paper>
-    );
-}
-
 function GridPosts(props) {
     const classes = useStyles();
     const { posts, title, xsNum, mdNum } = props;
@@ -65,7 +37,7 @@ function GridPosts(props) {
             </Typography>
             <Divider />
             {posts.map((post) => (
-                <ProjectCard projectDesc={post[0]} imgSrc={post[1]}/>
+                <ImageCard description={post[0]} imgSrc={post[1]}/>
             ))}
         </Grid>
     );

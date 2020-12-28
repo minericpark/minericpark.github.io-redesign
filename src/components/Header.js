@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {makeStyles} from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import Link from '@material-ui/core/Link';
-import HeaderNav from './HeaderNav.js';
+import HeaderNav from './subcomponents/HeaderNav.js';
 import { motion } from "framer-motion";
 import { GiAcorn } from "react-icons/gi";
 import { IconContext } from "react-icons";

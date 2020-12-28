@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function CustomBlogPost(props) {
+function AboutMeBlock(props) {
     const classes = useStyles();
     const { post, images, title, xsNum, mdNum } = props;
 
@@ -56,9 +56,9 @@ function CustomBlogPost(props) {
     );
 }
 
-export default CustomBlogPost;
+export default AboutMeBlock;
 
-CustomBlogPost.propTypes = {
+AboutMeBlock.propTypes = {
     post: PropTypes.string,
     images: PropTypes.array,
     title: PropTypes.string,

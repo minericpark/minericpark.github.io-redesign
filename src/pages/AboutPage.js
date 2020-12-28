@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from "@material-ui/core/Grid";
-import CustomBlogPost from "../components/CustomBlogPost";
+import AboutMeBlock from "../components/AboutMeBlock";
 import aboutMePost from "../components/blogposts/about-me.md";
 
 const useStyles = makeStyles((theme) => ({
@@ -33,7 +33,7 @@ function AboutPage() {
             <div className={classes.root} key={"mainContainer"}>
                 <main>
                     <Grid className={classes.mainGrid} container spacing={5}>
-                        <CustomBlogPost title="About Me" post={post} images={images} xsNum="12" mdNum="12"/>
+                        <AboutMeBlock title="About Me" post={post} images={images} xsNum="12" mdNum="12"/>
                     </Grid>
                 </main>
             </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import LandingFront from "../components/LandingFront";
+import LandingBlock from "../components/LandingBlock";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -34,7 +34,7 @@ function LandingPage() {
             <CssBaseline />
             <div className={classes.root} key={"mainContainer"}>
                 <main>
-                    <LandingFront post={mainFeaturedPost}/>
+                    <LandingBlock post={mainFeaturedPost}/>
                 </main>
             </div>
         </React.Fragment>
