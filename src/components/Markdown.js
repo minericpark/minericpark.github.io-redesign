@@ -3,6 +3,7 @@ import ReactMarkdown from 'markdown-to-jsx';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
+import Divider from "@material-ui/core/Divider";
 
 //Note: Modified markdown files to be a javascript file that returns a string object
 //Original markdown format does not work with markdowns with create-react-app thus must use javascript objects instead
@@ -10,6 +11,10 @@ import Link from '@material-ui/core/Link';
 const styles = (theme) => ({
     listItem: {
         marginTop: theme.spacing(0),
+    },
+    divider: {
+        color: theme.palette.primary.main,
+        marginBottom: theme.spacing(2),
     },
 });
 

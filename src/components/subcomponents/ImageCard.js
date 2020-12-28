@@ -25,18 +25,18 @@ const useStyles = makeStyles((theme) => ({
 
 function ImageCard(props) {
     const classes = useStyles();
-    const { description, imgSrc } = props;
+    const { description, imgSrc, direction, imageAlignment, textAlignment } = props;
 
     return (
         <Paper className={classes.paper}>
-            <Grid container spacing={2}>
+            <Grid container spacing={2} direction={direction} justify='center' alignItems={imageAlignment}>
                 <Grid item>
                     <ButtonBase className={classes.image}>
                         <img className={classes.img} alt={imgSrc.src} src={imgSrc.src} />
                     </ButtonBase>
                 </Grid>
                 <Grid item xs={12} sm container>
-                    <Grid item xs container direction="column" spacing={2}>
+                    <Grid item xs container spacing={2}>
                         <Grid item xs>
                             <Markdown key={description.substring(0, 40)}>
                                 {description}
@@ -54,4 +54,5 @@ export default ImageCard;
 ImageCard.propTypes = {
     description: PropTypes.string,
     imgSrc: PropTypes.string,
+    direction: PropTypes.string,
 };

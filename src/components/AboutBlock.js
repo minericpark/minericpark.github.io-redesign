@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function AboutMeBlock(props) {
+function AboutBlock(props) {
     const classes = useStyles();
     const { post, images, title, xsNum, mdNum } = props;
 
@@ -56,9 +56,9 @@ function AboutMeBlock(props) {
     );
 }
 
-export default AboutMeBlock;
+export default AboutBlock;
 
-AboutMeBlock.propTypes = {
+AboutBlock.propTypes = {
     post: PropTypes.string,
     images: PropTypes.array,
     title: PropTypes.string,

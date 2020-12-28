@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 
 function GridPosts(props) {
     const classes = useStyles();
-    const { posts, title, xsNum, mdNum } = props;
+    const { posts, title, xsNum, mdNum, direction } = props;
 
     return (
         <Grid item xs={xsNum} md={mdNum}>
@@ -37,7 +37,7 @@ function GridPosts(props) {
             </Typography>
             <Divider />
             {posts.map((post) => (
-                <ImageCard description={post[0]} imgSrc={post[1]}/>
+                <ImageCard description={post[0]} imgSrc={post[1]} direction={direction}/>
             ))}
         </Grid>
     );
@@ -50,4 +50,5 @@ GridPosts.propTypes = {
     title: PropTypes.string,
     xsNum: PropTypes.string,
     mdNum: PropTypes.string,
+    direction: PropTypes.string,
 };
