@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import Markdown from './Markdown';
+import Card from "@material-ui/core/Card";
 
 const useStyles = makeStyles((theme) => ({
     markdown: {
@@ -19,8 +20,8 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
     },
     altImage: {
-        height: '30%',
-        width: '30%',
+        height: '100%',
+        width: '100%',
         display: 'flex',
     },
     textDiv: {
@@ -45,7 +46,9 @@ function AboutBlock(props) {
             </Typography>
             <Divider />
             <div className={classes.card}>
-                <img className={classes.altImage} src={images[0]} alt={images[0]}/>
+                <Card>
+                    <img className={classes.altImage} src={images[0]} alt={images[0]}/>
+                </Card>
                 <div className={classes.textDiv}>
                     <Markdown className={classes.markdown} key={post.substring(0, 40)}>
                         {post}
