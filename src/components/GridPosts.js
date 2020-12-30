@@ -24,6 +24,9 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(2),
         marginTop: theme.spacing(2),
     },
+    mainGrid: {
+        margin: '1px',
+    }
 }));
 
 function GridPosts(props) {
@@ -31,14 +34,16 @@ function GridPosts(props) {
     const { posts, title, xsNum, mdNum, direction } = props;
 
     return (
-        <Grid item xs={xsNum} md={mdNum}>
-            <Typography variant="h6" gutterBottom className={classes.header} color="primary">
-                {title}
-            </Typography>
-            <Divider />
-            {posts.map((post) => (
-                <ImageCard description={post[0]} imgSrc={post[1]} direction={direction}/>
-            ))}
+        <Grid className={classes.mainGrid} container spacing={5}>
+            <Grid item xs={xsNum} md={mdNum}>
+                <Typography variant="h6" gutterBottom className={classes.header} color="primary">
+                    {title}
+                </Typography>
+                <Divider />
+                {posts.map((post) => (
+                    <ImageCard description={post[0]} imgSrc={post[1]} direction={direction}/>
+                ))}
+            </Grid>
         </Grid>
     );
 }

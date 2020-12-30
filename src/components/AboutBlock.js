@@ -8,6 +8,10 @@ import Markdown from './Markdown';
 import Card from "@material-ui/core/Card";
 
 const useStyles = makeStyles((theme) => ({
+    mainGrid: {
+        margin: '0px',
+        paddingBottom: '2%',
+    },
     markdown: {
         ...theme.typography.body2,
     },
@@ -21,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     },
     altImage: {
         height: '100%',
-        width: '100%',
+        width: '110%',
         display: 'flex',
     },
     textDiv: {
@@ -40,21 +44,23 @@ function AboutBlock(props) {
     const { post, images, title, xsNum, mdNum } = props;
 
     return (
-        <Grid item xs={xsNum} md={mdNum}>
-            <Typography variant="h6" gutterBottom className={classes.header} color="primary">
-                {title}
-            </Typography>
-            <Divider />
-            <div className={classes.card}>
-                <Card>
-                    <img className={classes.altImage} src={images[0]} alt={images[0]}/>
-                </Card>
-                <div className={classes.textDiv}>
-                    <Markdown className={classes.markdown} key={post.substring(0, 40)}>
-                        {post}
-                    </Markdown>
+        <Grid className={classes.mainGrid} container spacing={5}>
+            <Grid item xs={xsNum} md={mdNum}>
+                <Typography variant="h6" gutterBottom className={classes.header} color="primary">
+                    {title}
+                </Typography>
+                <Divider />
+                <div className={classes.card}>
+                    <Card>
+                        <img className={classes.altImage} src={images[0]} alt={images[0]}/>
+                    </Card>
+                    <div className={classes.textDiv}>
+                        <Markdown className={classes.markdown} key={post.substring(0, 40)}>
+                            {post}
+                        </Markdown>
+                    </div>
                 </div>
-            </div>
+            </Grid>
         </Grid>
     );
 }

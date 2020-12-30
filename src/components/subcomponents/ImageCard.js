@@ -31,9 +31,9 @@ function ImageCard(props) {
         <Paper className={classes.paper}>
             <Grid container spacing={2} direction={direction} justify='center' alignItems={imageAlignment}>
                 <Grid item>
-                    <ButtonBase className={classes.image}>
+                    <div className={classes.image}>
                         <img className={classes.img} alt={imgSrc.src} src={imgSrc.src} />
-                    </ButtonBase>
+                    </div>
                 </Grid>
                 <Grid item xs={12} sm container>
                     <Grid item xs container spacing={2}>

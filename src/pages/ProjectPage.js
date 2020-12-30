@@ -13,9 +13,6 @@ const useStyles = makeStyles((theme) => ({
         margin: '0 auto',
         minHeight: '85vh',
     },
-    mainGrid: {
-        margin: '1px',
-    }
 }));
 
 const phImg = new Image();
@@ -31,9 +28,7 @@ function ProjectPage() {
             <CssBaseline />
             <div className={classes.root} key={"mainContainer"}>
                 <main>
-                    <Grid className={classes.mainGrid} container spacing={5}>
-                        <GridPosts title="Projects" posts={projects} xsNum="12" mdNum="12"/>
-                    </Grid>
+                    <GridPosts title="Projects" posts={projects} xsNum="12" mdNum="12"/>
                 </main>
             </div>
         </React.Fragment>

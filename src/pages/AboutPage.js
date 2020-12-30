@@ -11,10 +11,6 @@ const useStyles = makeStyles((theme) => ({
         margin: '0 auto',
         minHeight: '85vh',
     },
-    mainGrid: {
-        margin: '0px',
-        paddingBottom: '5%',
-    },
 }));
 
 const post = aboutMePost;
@@ -32,9 +28,7 @@ function AboutPage() {
             <CssBaseline />
             <div className={classes.root} key={"mainContainer"}>
                 <main>
-                    <Grid className={classes.mainGrid} container spacing={5}>
-                        <AboutBlock title="About Me" post={post} images={images} xsNum="12" mdNum="12"/>
-                    </Grid>
+                    <AboutBlock title="About Me" post={post} images={images} xsNum="12" mdNum="12"/>
                 </main>
             </div>
         </React.Fragment>
