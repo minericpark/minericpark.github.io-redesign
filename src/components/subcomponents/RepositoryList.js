@@ -10,15 +10,15 @@ function RepositoryList(props) {
         return (<TextCard subTitle={noRepoMessage}/>);
     }
 
-    repos.sort(function(a, b) {
-        return b.updated_at.localeCompare(a.updated_at);
-    })
-
     return (
         <Grid item xs={xsNum} md={mdNum}>
             {repos.filter(repo => repo.fork == false)
+                .filter(repo => repo.language != null)
+                .sort(function(a, b) {
+                    return b.updated_at.localeCompare(a.updated_at);
+                })
                 .map((repo) => (
-                <TextCard subTitle={repo.name} mainText={repo.description} href={repo.html_url}/>
+                <TextCard title={repo.full_name} subTitle={repo.language} mainText={repo.description} href={repo.html_url}/>
             ))}
         </Grid>
     );

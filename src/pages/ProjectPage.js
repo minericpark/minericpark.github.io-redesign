@@ -26,6 +26,9 @@ const useStyles = makeStyles((theme) => ({
     header: {
         marginTop: theme.spacing(3),
     },
+    subheader: {
+        marginTop: theme.spacing(2),
+    },
     statsBox: {
         padding: theme.spacing(1),
         backgroundColor: theme.palette.grey[200],
@@ -42,7 +45,8 @@ function ProjectPage() {
 
     useEffect(() => {
         setListState({ loading: true, repos: null });
-        const githubApiUrl = 'https://api.github.com/users/minericpark/repos';
+        const githubUser = 'minericpark';
+        const githubApiUrl = 'https://api.github.com/users/' + githubUser + '/repos';
         axios.get(githubApiUrl).then((repos) => {
             const allRepos = repos.data;
             setListState({ loading: false, repos: allRepos })
@@ -60,7 +64,7 @@ function ProjectPage() {
                                 {'Projects'}
                             </Typography>
                             <Divider />
-                            <Typography variant="subtitle1" gutterBottom className={classes.header} color="secondary">
+                            <Typography variant="subtitle1" gutterBottom className={classes.subheader} color="secondary">
                                 GitHub Statistics
                             </Typography>
                                 <Grid container spacing={2} alignContent='center' justify='center'>
@@ -77,7 +81,7 @@ function ProjectPage() {
                                         </Grid>
                                     </Paper>
                                 </Grid>
-                            <Typography variant="subtitle1" gutterBottom className={classes.header} color="secondary">
+                            <Typography variant="subtitle1" gutterBottom className={classes.subheader} color="secondary">
                                 GitHub Projects
                             </Typography>
                             <ListLoading isLoading={listState.loading} repos={listState.repos} />
