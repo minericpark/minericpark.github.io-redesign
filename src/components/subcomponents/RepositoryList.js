@@ -11,14 +11,16 @@ function RepositoryList(props) {
     }
 
     return (
-        <Grid item xs={xsNum} md={mdNum}>
+        <Grid container spacing={3}>
             {repos.filter(repo => repo.fork === false)
                 .filter(repo => repo.language != null)
                 .sort(function(a, b) {
                     return b.updated_at.localeCompare(a.updated_at);
                 })
                 .map((repo) => (
-                <TextCard title={repo.full_name} subTitle={repo.language} mainText={repo.description} href={repo.html_url}/>
+                    <Grid item xs={xsNum} md={mdNum}>
+                        <TextCard title={repo.full_name} subTitle={repo.language} mainText={repo.description} href={repo.html_url}/>
+                    </Grid>
             ))}
         </Grid>
     );

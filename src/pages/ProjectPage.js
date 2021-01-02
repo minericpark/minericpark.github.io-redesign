@@ -82,7 +82,7 @@ function ProjectPage() {
                             <Typography variant="subtitle1" gutterBottom className={classes.subheader} color="secondary">
                                 GitHub Projects
                             </Typography>
-                            <ListLoading isLoading={listState.loading} repos={listState.repos} />
+                            <ListLoading isLoading={listState.loading} repos={listState.repos} xsNum={3}/>
                         </Grid>
                     </Grid>
                 </main>

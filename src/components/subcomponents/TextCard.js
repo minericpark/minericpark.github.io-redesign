@@ -24,24 +24,18 @@ function TextCard(props) {
     return (
         <Paper className={classes.paper}>
             <Grid container spacing={2} direction={direction} justify='center' alignItems={textAlignment}>
-                <Grid item md={3}>
-                    <Link href={href}>
-                        <Typography variant="h6" gutterBottom key={'title:' + title} color="primary">
+                <Grid item xs={12}>
+                    <Typography variant="h6" gutterBottom key={'title:' + title} color="primary">
+                        <Link href={href}>
                             {title}
-                        </Typography>
-                    </Link>
+                        </Link>
+                    </Typography>
                     <Typography variant="h7" gutterBottom key={'subtitle:' + subTitle} color="secondary">
                         {subTitle}
                     </Typography>
-                </Grid>
-                <Grid item xs={12} sm container>
-                    <Grid item xs container spacing={2}>
-                        <Grid item xs>
-                            <Typography key={'mainText:' + mainText} color="tertiary">
-                                {mainText}
-                            </Typography>
-                        </Grid>
-                    </Grid>
+                    <Typography key={'mainText:' + mainText} color="tertiary">
+                        {mainText}
+                    </Typography>
                 </Grid>
             </Grid>
         </Paper>
