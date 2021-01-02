@@ -12,7 +12,7 @@ function RepositoryList(props) {
 
     return (
         <Grid item xs={xsNum} md={mdNum}>
-            {repos.filter(repo => repo.fork == false)
+            {repos.filter(repo => repo.fork === false)
                 .filter(repo => repo.language != null)
                 .sort(function(a, b) {
                     return b.updated_at.localeCompare(a.updated_at);

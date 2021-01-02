@@ -1,5 +1,4 @@
-import React, {useEffect} from 'react';
-import ImageCard from "./ImageCard";
+import React from 'react';
 import TextCard from "./TextCard";
 
 function WithComponentLoading(Component) {

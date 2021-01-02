@@ -51,14 +51,18 @@ function AboutBlock(props) {
                 </Typography>
                 <Divider />
                 <div className={classes.card}>
-                    <Card>
-                        <img className={classes.altImage} src={images[0]} alt={images[0]}/>
-                    </Card>
-                    <div className={classes.textDiv}>
-                        <Markdown className={classes.markdown} key={post.substring(0, 40)}>
-                            {post}
-                        </Markdown>
-                    </div>
+                    <Grid item>
+                        <Card>
+                            <img className={classes.altImage} src={images[0]} alt={images[0]}/>
+                        </Card>
+                    </Grid>
+                    <Grid item>
+                        <div className={classes.textDiv}>
+                            <Markdown className={classes.markdown} key={post.substring(0, 40)}>
+                                {post}
+                            </Markdown>
+                        </div>
+                    </Grid>
                 </div>
             </Grid>
         </Grid>

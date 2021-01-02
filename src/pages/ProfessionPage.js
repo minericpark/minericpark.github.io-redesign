@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Grid from "@material-ui/core/Grid";
 import subtitle1 from "../components/professionposts/work-experience1.md";
 import workportfolio1 from "../components/professionposts/work-experience1-2.md";
 import subtitle2 from "../components/professionposts/work-experience2.md";

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import {AnimateSharedLayout, AnimatePresence, motion, useCycle} from "framer-motion";
+import {AnimateSharedLayout, AnimatePresence, motion} from "framer-motion";
 import ButtonBase from "@material-ui/core/ButtonBase";
 import Grid from '@material-ui/core/Grid';
 import Paper from "@material-ui/core/Paper";
@@ -20,8 +20,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function SpringText(props) {
-    const classes = useStyles();
-    const {direction, description, imageAlignment} = props;
+    const { description } = props;
 
     return (
         <motion.div layout initial={{ opacity: 0, y: '-100%' }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: '-100%' }} >

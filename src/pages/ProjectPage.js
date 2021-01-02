@@ -10,9 +10,7 @@ import WithComponentLoading from "../components/subcomponents/WithComponentLoadi
 import Markdown from "markdown-to-jsx";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
-import Sidebar from "../components/Sidebar";
 import Paper from "@material-ui/core/Paper";
-import Link from "@material-ui/core/Link";
 
 const useStyles = makeStyles((theme) => ({
     root: {
