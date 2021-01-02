@@ -50,21 +50,17 @@ function SpringImageCard(props) {
                             </motion.div>
                         </Card>
                     </Grid>
-                    <Grid item xs={12} sm container>
-                        <Grid item xs container spacing={2}>
-                            <Grid item xs>
-                                <div>
-                                    <Markdown key={subtitle.substring(0, 40)}>
-                                        {subtitle}
-                                    </Markdown>
-                                </div>
-                                <motion.div layout initial={{ borderRadius: 10 }}>
-                                    <AnimatePresence>
-                                        {isOpen && <SpringText description={description} imageAlignment={imageAlignment} direction={direction}/>}
-                                    </AnimatePresence>
-                                </motion.div>
-                            </Grid>
-                        </Grid>
+                    <Grid item xs={12} sm>
+                        <div>
+                            <Markdown key={subtitle.substring(0, 40)}>
+                                {subtitle}
+                            </Markdown>
+                        </div>
+                        <motion.div layout initial={{ borderRadius: 10 }}>
+                            <AnimatePresence>
+                                {isOpen && <SpringText description={description} imageAlignment={imageAlignment} direction={direction}/>}
+                            </AnimatePresence>
+                        </motion.div>
                     </Grid>
                 </Grid>
             </Paper>

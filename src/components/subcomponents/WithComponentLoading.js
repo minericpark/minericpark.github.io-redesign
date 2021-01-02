@@ -1,5 +1,5 @@
 import React from 'react';
-import TextCard from "./TextCard";
+import RepositoryCard from "./RepositoryCard";
 
 function WithComponentLoading(Component) {
     const loadText = 'Loading...';
@@ -7,7 +7,7 @@ function WithComponentLoading(Component) {
     return function WithLoadingComponent({isLoading, ...props}) {
         if (!isLoading) return <Component {...props} />;
         return (
-            <TextCard subTitle={loadText}/>
+            <RepositoryCard subTitle={loadText}/>
         );
     }
 }

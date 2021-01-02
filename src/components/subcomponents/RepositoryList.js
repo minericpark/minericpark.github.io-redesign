@@ -1,13 +1,13 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-import TextCard from "./TextCard";
+import RepositoryCard from "./RepositoryCard";
 
 function RepositoryList(props) {
     const { repos, xsNum, mdNum } = props;
     const noRepoMessage = 'No repositories loaded';
 
     if (!repos || repos.length === 0) {
-        return (<TextCard subTitle={noRepoMessage}/>);
+        return (<RepositoryCard subTitle={noRepoMessage}/>);
     }
 
     return (
@@ -19,7 +19,7 @@ function RepositoryList(props) {
                 })
                 .map((repo) => (
                     <Grid item xs={xsNum} md={mdNum}>
-                        <TextCard title={repo.full_name} subTitle={repo.language} mainText={repo.description} href={repo.html_url}/>
+                        <RepositoryCard title={repo.full_name} subTitle={repo.language} mainText={repo.description} href={repo.html_url}/>
                     </Grid>
             ))}
         </Grid>
