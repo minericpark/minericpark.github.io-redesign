@@ -26,6 +26,16 @@ const titleVariants = {
     exit: { y: -100, opacity: 0, transition },
 };
 
+const blogVariants = {
+    enter: { opacity: 1, transition },
+    exit: { opacity: 0, transition },
+};
+
+const sidebarVariants = {
+    enter: { opacity: 1, transition },
+    exit: { opacity: 0, transition },
+};
+
 function BlogBlock(props) {
     const classes = useStyles();
     const { sidebar, posts } = props;
@@ -34,17 +44,25 @@ function BlogBlock(props) {
         <motion.div initial="exit" animate="enter" exit="exit">
             <Grid className={classes.mainGrid} container spacing={5}>
                 <Grid item xs='12' md='8'>
-                    <Typography variant="h6" gutterBottom className={classes.header} color="primary">
-                        {'Blog'}
-                    </Typography>
-                    <Divider />
-                    <BlogPosts title="Blog" posts={posts} xsNum="12" mdNum="8"/>
+                    <motion.div variants={titleVariants}>
+                        <Typography variant="h6" gutterBottom className={classes.header} color="primary">
+                            {'Blog'}
+                        </Typography>
+                        <Divider />
+                    </motion.div>
+                    <motion.div variants={blogVariants}>
+                        <BlogPosts title="Blog" posts={posts} xsNum="12" mdNum="8"/>
+                    </motion.div>
                 </Grid>
-                <Sidebar
-                    title={sidebar.title}
-                    description={sidebar.description}
-                    archives={sidebar.archives}
-                />
+                <Grid item xs={12} md={4}>
+                    <motion.div variants={sidebarVariants}>
+                        <Sidebar
+                            title={sidebar.title}
+                            description={sidebar.description}
+                            archives={sidebar.archives}
+                        />
+                    </motion.div>
+                </Grid>
             </Grid>
         </motion.div>
     );

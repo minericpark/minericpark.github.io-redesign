@@ -22,7 +22,7 @@ function Sidebar(props) {
     const { archives, description, title } = props;
 
     return (
-        <Grid item xs={12} md={4}>
+        <div>
             <Paper elevation={0} className={classes.sidebarAboutBox}>
                 <Typography color="primary" variant="h6" gutterBottom>
                     {title}
@@ -37,7 +37,7 @@ function Sidebar(props) {
                     {archive.title}
                 </Link>
             ))}
-        </Grid>
+        </div>
     );
 }
 
