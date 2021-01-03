@@ -77,7 +77,7 @@ function ProfessionBlock(props) {
     const {workExperience, educationExperience, resumeLink} = props;
 
     return (
-        <motion.div initial="exit" animate="enter" exit="exit" variants={{ enter: { transition: { staggerChildren: 0.3 } } }}>
+        <motion.div initial="exit" animate="enter" exit="exit">
             <Grid className={classes.mainGrid} container spacing={5}>
                 <Grid item xs='12' md='12'>
                     <motion.div variants={titleVariants}>
@@ -86,17 +86,19 @@ function ProfessionBlock(props) {
                         </Typography>
                         <Divider/>
                     </motion.div>
-                    <motion.div variants={subtitleVariants}>
-                        <Typography variant="subtitle1" gutterBottom className={classes.header} color="secondary">
-                            Experience
-                        </Typography>
-                    </motion.div>
-                    {workExperience.map((post) => (
-                        <motion.div variants={experienceVariants}>
-                            <SpringImageCard subtitle={post[0]} description={post[1]}
-                                             display={<ImageDisplay imgSrc={post[2]} direction='column'/>}/>
+                    <motion.div variants={{ enter: { transition: { staggerChildren: 0.4 } } }}>
+                        <motion.div variants={subtitleVariants}>
+                            <Typography variant="subtitle1" gutterBottom className={classes.header} color="secondary">
+                                Experience
+                            </Typography>
                         </motion.div>
-                    ))}
+                        {workExperience.map((post) => (
+                            <motion.div variants={experienceVariants}>
+                                <SpringImageCard subtitle={post[0]} description={post[1]}
+                                                 display={<ImageDisplay imgSrc={post[2]} direction='column'/>}/>
+                            </motion.div>
+                        ))}
+                    </motion.div>
                 </Grid>
                 <Grid item xs='5' md='5' className={classes.centeredSubpoint}>
                     <motion.div variants={subtitleVariants}>

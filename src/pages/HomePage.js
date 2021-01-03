@@ -2,9 +2,9 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
-import MainFeaturedPost from '../components/MainFeaturedPost';
-import BlogPosts from '../components/BlogPosts';
-import Sidebar from '../components/Sidebar';
+import MainFeaturedPost from '../components/subcomponents/MainFeaturedPost';
+import BlogPosts from '../components/subcomponents/BlogPosts';
+import Sidebar from '../components/subcomponents/Sidebar';
 import post1 from '../components/blogposts/blog-post.1.md.js';
 
 const useStyles = makeStyles((theme) => ({

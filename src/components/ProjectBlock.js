@@ -10,6 +10,7 @@ import Markdown from "markdown-to-jsx";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import Paper from "@material-ui/core/Paper";
+import {motion} from "framer-motion";
 
 const useStyles = makeStyles((theme) => ({
     mainGrid: {
@@ -26,6 +27,25 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: theme.palette.grey[200],
     },
 }));
+
+const transition = {
+    duration: 0.5,
+};
+
+const titleVariants = {
+    enter: { y: 0, opacity: 1, transition },
+    exit: { y: -100, opacity: 0, transition },
+};
+
+const subtitleVariants = {
+    enter: { x: 0, opacity: 1, transition },
+    exit: { x: -100, opacity: 0, transition },
+};
+
+const statisticVariants = {
+    enter: { y: 0, opacity: 1, transition },
+    exit: { y: -100, opacity: 0, transition },
+};
 
 function ProjectBlock() {
     const classes = useStyles();
@@ -46,37 +66,47 @@ function ProjectBlock() {
     }, [setListState]);
 
     return (
-        <div>
+        <motion.div initial="exit" animate="enter" exit="exit">
             <Grid className={classes.mainGrid} container spacing={5}>
                 <Grid item xs={12} md={12}>
-                    <Typography variant="h6" gutterBottom className={classes.header} color="primary">
-                        {'Projects'}
-                    </Typography>
-                    <Divider />
-                    <Typography variant="subtitle1" gutterBottom className={classes.subheader} color="secondary">
-                        GitHub Statistics
-                    </Typography>
+                    <motion.div variants={titleVariants}>
+                        <Typography variant="h6" gutterBottom className={classes.header} color="primary">
+                            {'Projects'}
+                        </Typography>
+                        <Divider />
+                    </motion.div>
+                    <motion.div variants={subtitleVariants}>
+                        <Typography variant="subtitle1" gutterBottom className={classes.subheader} color="secondary">
+                            GitHub Statistics
+                        </Typography>
+                    </motion.div>
                     <Grid container spacing={2} alignContent='center' justify='center'>
-                        <Paper className={classes.statsBox} elevation={0}>
-                            <Grid item>
-                                <Markdown>
-                                    {githubstatistics}
-                                </Markdown>
-                            </Grid>
-                            <Grid item>
-                                <Markdown>
-                                    {githubmostusedlangs}
-                                </Markdown>
-                            </Grid>
-                        </Paper>
+                        <motion.div variants={statisticVariants}>
+                            <Paper className={classes.statsBox} elevation={0}>
+                                <Grid item>
+                                    <Markdown>
+                                        {githubstatistics}
+                                    </Markdown>
+                                </Grid>
+                                <Grid item>
+                                    <Markdown>
+                                        {githubmostusedlangs}
+                                    </Markdown>
+                                </Grid>
+                            </Paper>
+                        </motion.div>
                     </Grid>
-                    <Typography variant="subtitle1" gutterBottom className={classes.subheader} color="secondary">
-                        GitHub Projects
-                    </Typography>
-                    <ListLoading isLoading={listState.loading} repos={listState.repos} xsNum={3}/>
+                    <motion.div variants={{ enter: { transition: { staggerChildren: 0.4 } } }}>
+                        <motion.div variants={subtitleVariants}>
+                            <Typography variant="subtitle1" gutterBottom className={classes.subheader} color="secondary">
+                                GitHub Projects
+                            </Typography>
+                        </motion.div>
+                        <ListLoading isLoading={listState.loading} repos={listState.repos} xsNum={3}/>
+                    </motion.div>
                 </Grid>
             </Grid>
-        </div>
+        </motion.div>
     );
 
 }

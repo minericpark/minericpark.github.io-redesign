@@ -5,7 +5,7 @@ import {motion} from "framer-motion";
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
-import Markdown from './Markdown';
+import Markdown from './subcomponents/Markdown';
 import Card from "@material-ui/core/Card";
 
 const useStyles = makeStyles((theme) => ({
