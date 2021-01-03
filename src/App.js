@@ -33,17 +33,19 @@ function App() {
     return (
         <React.Fragment>
             <Router>
-                <Header title="Minternet" sections={header.sections} key={"mainHeader"}/>
-                <AnimatePresence exitBeforeEnter initial={false}>
-                    <Switch>
-                        <Route exact path="/" component={LandingPage} />
-                        <Route path="/about" component={AboutPage} />
-                        <Route path="/projects" component={ProjectPage} />
-                        <Route path="/blog" component={BlogPage} />
-                        <Route path="/profession" component={ProfessionPage} />
-                    </Switch>
-                </AnimatePresence>
-                <Footer social={footer.social} key={"mainFooter"}/>
+                <Route render={({ location }) => (
+                    <AnimatePresence initial={false}>
+                        <Header title="Minternet" sections={header.sections} key={"mainHeader"}/>
+                        <Switch location={location} key={location.pathname}>
+                            <Route exact path="/" component={LandingPage} />
+                            <Route path="/about" component={AboutPage} />
+                            <Route path="/projects" component={ProjectPage} />
+                            <Route path="/blog" component={BlogPage} />
+                            <Route path="/profession" component={ProfessionPage} />
+                        </Switch>
+                        <Footer social={footer.social} key={"mainFooter"}/>
+                    </AnimatePresence>
+                )}/>
             </Router>
         </React.Fragment>
     );
