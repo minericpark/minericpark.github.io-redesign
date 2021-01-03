@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AboutBlock from "../components/AboutBlock";
 import aboutMePost from "../components/blogposts/about-me.md";
+import {AnimatePresence, motion} from "framer-motion";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -25,11 +26,14 @@ function AboutPage() {
     return (
         <React.Fragment>
             <CssBaseline />
-            <div className={classes.root} key={"mainContainer"}>
-                <main>
+            <main>
+                <motion.div className={classes.root} key={"mainContainer"}
+                            initial="initial"
+                            animate="enter"
+                            exit="exit">
                     <AboutBlock title="About Me" post={post} images={images} xsNum="12" mdNum="12"/>
-                </main>
-            </div>
+                </motion.div>
+            </main>
         </React.Fragment>
     );
 }

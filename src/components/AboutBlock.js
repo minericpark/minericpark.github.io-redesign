@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
+import {motion} from "framer-motion";
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
@@ -39,33 +40,58 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+const transition = {
+    duration: 0.5,
+};
+
+const imageVariants = {
+    enter: { x: 0, opacity: 1, transition },
+    exit: { x: -100, opacity: 0, transition },
+};
+
+const titleVariants = {
+    enter: { y: 0, opacity: 1, transition },
+    exit: { y: -100, opacity: 0, transition },
+};
+
+const textVariants = {
+    enter: { opacity: 1, transition },
+    exit: { opacity: 0, transition },
+};
+
 function AboutBlock(props) {
     const classes = useStyles();
     const { post, images, title, xsNum, mdNum } = props;
 
     return (
-        <Grid className={classes.mainGrid} container spacing={5}>
-            <Grid item xs={xsNum} md={mdNum}>
-                <Typography variant="h6" gutterBottom className={classes.header} color="primary">
-                    {title}
-                </Typography>
-                <Divider />
-                <div className={classes.card}>
-                    <Grid item>
-                        <Card>
-                            <img className={classes.altImage} src={images[0]} alt={images[0]}/>
-                        </Card>
-                    </Grid>
-                    <Grid item>
-                        <div className={classes.textDiv}>
-                            <Markdown className={classes.markdown} key={post.substring(0, 40)}>
-                                {post}
-                            </Markdown>
-                        </div>
-                    </Grid>
-                </div>
+        <motion.div initial="exit" animate="enter" exit="exit">
+            <Grid className={classes.mainGrid} container spacing={5}>
+                <Grid item xs={xsNum} md={mdNum}>
+                    <motion.div variants={titleVariants}>
+                        <Typography variant="h6" gutterBottom className={classes.header} color="primary">
+                            {title}
+                        </Typography>
+                        <Divider />
+                    </motion.div>
+                    <div className={classes.card}>
+                        <Grid item>
+                            <motion.div variants={imageVariants}>
+                                <Card>
+                                    <img className={classes.altImage} src={images[0]} alt={images[0]}/>
+                                </Card>
+                            </motion.div>
+                        </Grid>
+                        <Grid item>
+                            <motion.div className={classes.textDiv} variants={textVariants}>
+                                <Markdown className={classes.markdown} key={post.substring(0, 40)}>
+                                    {post}
+                                </Markdown>
+                            </motion.div>
+                        </Grid>
+                    </div>
+                </Grid>
             </Grid>
-        </Grid>
+        </motion.div>
     );
 }
 
