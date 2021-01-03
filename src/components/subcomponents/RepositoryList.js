@@ -21,22 +21,21 @@ function RepositoryList(props) {
     }
 
     return (
-
         <motion.div variants={{ enter: { transition: { staggerChildren: 0.3 } } }}>
-        <Grid container spacing={3}>
-            {repos.filter(repo => repo.fork === false)
-                .filter(repo => repo.language != null)
-                .sort(function(a, b) {
-                    return b.updated_at.localeCompare(a.updated_at);
-                })
-                .map((repo) => (
-                    <Grid item xs={xsNum} md={mdNum}>
-                        <motion.div variants={projectVariants}>
-                            <RepositoryCard title={repo.full_name} subTitle={repo.language} mainText={repo.description} href={repo.html_url}/>
-                        </motion.div>
-                    </Grid>
-            ))}
-        </Grid>
+            <Grid container spacing={3}>
+                {repos.filter(repo => repo.fork === false)
+                    .filter(repo => repo.language != null)
+                    .sort(function(a, b) {
+                        return b.updated_at.localeCompare(a.updated_at);
+                    })
+                    .map((repo) => (
+                        <Grid item xs={xsNum} md={mdNum}>
+                            <motion.div variants={projectVariants}>
+                                <RepositoryCard title={repo.full_name} subTitle={repo.language} mainText={repo.description} href={repo.html_url}/>
+                            </motion.div>
+                        </Grid>
+                ))}
+            </Grid>
         </motion.div>
     );
 
