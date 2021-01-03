@@ -9,6 +9,7 @@ import BlogPage from "./pages/BlogPage";
 import ProfessionPage from "./pages/ProfessionPage";
 import { AiFillGithub, AiFillLinkedin, AiFillMail } from "react-icons/ai";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {AnimatePresence} from "framer-motion";
 
 const header = {
     sections: [
@@ -31,17 +32,19 @@ function App() {
 
     return (
         <React.Fragment>
-            <Header title="Minternet" sections={header.sections} key={"mainHeader"}/>
             <Router>
-                <Switch>
-                    <Route exact path="/" component={LandingPage} />
-                    <Route path="/about" component={AboutPage} />
-                    <Route path="/projects" component={ProjectPage} />
-                    <Route path="/blog" component={BlogPage} />
-                    <Route path="/profession" component={ProfessionPage} />
-                </Switch>
+                <Header title="Minternet" sections={header.sections} key={"mainHeader"}/>
+                <AnimatePresence exitBeforeEnter initial={false}>
+                    <Switch>
+                        <Route exact path="/" component={LandingPage} />
+                        <Route path="/about" component={AboutPage} />
+                        <Route path="/projects" component={ProjectPage} />
+                        <Route path="/blog" component={BlogPage} />
+                        <Route path="/profession" component={ProfessionPage} />
+                    </Switch>
+                </AnimatePresence>
+                <Footer social={footer.social} key={"mainFooter"}/>
             </Router>
-            <Footer social={footer.social} key={"mainFooter"}/>
         </React.Fragment>
     );
 }
