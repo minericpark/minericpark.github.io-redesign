@@ -6,6 +6,7 @@ import ImageCard from "./subcomponents/ImageCard";
 import PdfViewer from "./subcomponents/PdfViewer";
 import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
+import {motion} from "framer-motion";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -33,6 +34,35 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+const transition = {
+    duration: 0.5,
+};
+
+const titleVariants = {
+    enter: { y: 0, opacity: 1, transition },
+    exit: { y: -100, opacity: 0, transition },
+};
+
+const subtitleVariants = {
+    enter: { x: 0, opacity: 1, transition },
+    exit: { x: -100, opacity: 0, transition },
+};
+
+const experienceVariants = {
+    enter: { x: 0, opacity: 1, transition },
+    exit: { x: -100, opacity: 0, transition },
+};
+
+const educationVariants = {
+    enter: { opacity: 1, transition },
+    exit: { opacity: 0, transition },
+};
+
+const resumeVariants = {
+    enter: { opacity: 1, transition },
+    exit: { opacity: 0, transition },
+};
+
 function ImageDisplay(props) {
     const classes = useStyles();
     const { imgSrc } = props;
@@ -47,36 +77,52 @@ function ProfessionBlock(props) {
     const {workExperience, educationExperience, resumeLink} = props;
 
     return (
-        <Grid className={classes.mainGrid} container spacing={5}>
-            <Grid item xs='12' md='12'>
-                <Typography variant="h6" gutterBottom className={classes.header} color="primary">
-                    Profession
-                </Typography>
-                <Divider/>
-                <Typography variant="subtitle1" gutterBottom className={classes.header} color="secondary">
-                    Experience
-                </Typography>
-                {workExperience.map((post) => (
-                    <SpringImageCard subtitle={post[0]} description={post[1]}
-                                     display={<ImageDisplay imgSrc={post[2]} direction='column'/>}/>
-                ))}
+        <motion.div initial="exit" animate="enter" exit="exit" variants={{ enter: { transition: { staggerChildren: 0.3 } } }}>
+            <Grid className={classes.mainGrid} container spacing={5}>
+                <Grid item xs='12' md='12'>
+                    <motion.div variants={titleVariants}>
+                        <Typography variant="h6" gutterBottom className={classes.header} color="primary">
+                            Profession
+                        </Typography>
+                        <Divider/>
+                    </motion.div>
+                    <motion.div variants={subtitleVariants}>
+                        <Typography variant="subtitle1" gutterBottom className={classes.header} color="secondary">
+                            Experience
+                        </Typography>
+                    </motion.div>
+                    {workExperience.map((post) => (
+                        <motion.div variants={experienceVariants}>
+                            <SpringImageCard subtitle={post[0]} description={post[1]}
+                                             display={<ImageDisplay imgSrc={post[2]} direction='column'/>}/>
+                        </motion.div>
+                    ))}
+                </Grid>
+                <Grid item xs='5' md='5' className={classes.centeredSubpoint}>
+                    <motion.div variants={subtitleVariants}>
+                        <Typography variant="subtitle1" gutterBottom className={classes.header} color="secondary">
+                            Education
+                        </Typography>
+                    </motion.div>
+                    {educationExperience.map((post) => (
+                        <motion.div variants={educationVariants}>
+                            <ImageCard description={post[0]} imgSrc={post[1]} direction='column' imageAlignment='center'
+                                       textAlignment='center'/>
+                        </motion.div>
+                    ))}
+                </Grid>
+                <Grid item xs className={classes.centeredSubpoint}>
+                    <motion.div variants={subtitleVariants}>
+                        <Typography variant="subtitle1" gutterBottom className={classes.header} color="secondary">
+                            Resume
+                        </Typography>
+                    </motion.div>
+                    <motion.div variants={resumeVariants}>
+                        <PdfViewer src={resumeLink}/>
+                    </motion.div>
+                </Grid>
             </Grid>
-            <Grid item xs='5' md='5' className={classes.centeredSubpoint}>
-                <Typography variant="subtitle1" gutterBottom className={classes.header} color="secondary">
-                    Education
-                </Typography>
-                {educationExperience.map((post) => (
-                    <ImageCard description={post[0]} imgSrc={post[1]} direction='column' imageAlignment='center'
-                               textAlignment='center'/>
-                ))}
-            </Grid>
-            <Grid item xs='5' md='5' className={classes.centeredSubpoint}>
-                <Typography variant="subtitle1" gutterBottom className={classes.header} color="secondary">
-                    Resume
-                </Typography>
-                <PdfViewer src={resumeLink}/>
-            </Grid>
-        </Grid>
+        </motion.div>
     );
 }
 

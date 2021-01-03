@@ -44,14 +44,14 @@ const transition = {
     duration: 0.5,
 };
 
-const imageVariants = {
-    enter: { x: 0, opacity: 1, transition },
-    exit: { x: -100, opacity: 0, transition },
-};
-
 const titleVariants = {
     enter: { y: 0, opacity: 1, transition },
     exit: { y: -100, opacity: 0, transition },
+};
+
+const imageVariants = {
+    enter: { x: 0, opacity: 1, transition },
+    exit: { x: -100, opacity: 0, transition },
 };
 
 const textVariants = {

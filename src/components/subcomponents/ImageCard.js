@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
         width: 128,
         height: 128,
     },
-    paper: {
+    imageCard: {
         padding: theme.spacing(2),
         marginTop: theme.spacing(2),
     },
@@ -27,7 +27,7 @@ function ImageCard(props) {
     const { description, imgSrc, direction, imageAlignment } = props;
 
     return (
-        <Paper className={classes.paper}>
+        <div className={classes.imageCard}>
             <Grid container spacing={2} direction={direction} justify='center' alignItems={imageAlignment}>
                 <Grid item>
                     <div className={classes.image}>
@@ -44,7 +44,7 @@ function ImageCard(props) {
                     </Grid>
                 </Grid>
             </Grid>
-        </Paper>
+        </div>
     );
 }
 
