@@ -26,14 +26,11 @@ function AboutPage() {
     return (
         <React.Fragment>
             <CssBaseline />
-            <main>
-                <motion.div className={classes.root} key={"mainContainer"}
-                            initial="initial"
-                            animate="enter"
-                            exit="exit">
+            <div className={classes.root} key={"mainContainer"}>
+                <main>
                     <AboutBlock title="About Me" post={post} images={images} xsNum="12" mdNum="12"/>
-                </motion.div>
-            </main>
+                </main>
+            </div>
         </React.Fragment>
     );
 }
