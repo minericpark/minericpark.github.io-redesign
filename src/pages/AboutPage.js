@@ -1,8 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Grid from "@material-ui/core/Grid";
-import CustomBlogPost from "../components/CustomBlogPost";
+import AboutBlock from "../components/AboutBlock";
 import aboutMePost from "../components/blogposts/about-me.md";
 
 const useStyles = makeStyles((theme) => ({
@@ -10,10 +9,6 @@ const useStyles = makeStyles((theme) => ({
         width: '80%',
         margin: '0 auto',
         minHeight: '85vh',
-    },
-    mainGrid: {
-        margin: '0px',
-        paddingBottom: '5%',
     },
 }));
 
@@ -32,9 +27,7 @@ function AboutPage() {
             <CssBaseline />
             <div className={classes.root} key={"mainContainer"}>
                 <main>
-                    <Grid className={classes.mainGrid} container spacing={5}>
-                        <CustomBlogPost title="About Me" post={post} images={images} xsNum="12" mdNum="12"/>
-                    </Grid>
+                    <AboutBlock title="About Me" post={post} images={images} xsNum="12" mdNum="12"/>
                 </main>
             </div>
         </React.Fragment>

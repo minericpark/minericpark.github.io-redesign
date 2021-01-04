@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles((theme) => ({
     toolbarLink: {
         padding: theme.spacing(2.5),
-        color: theme.palette.primary.lighterMain,
+        color: 'inherit',
         '&:hover': {
             color: theme.palette.primary.main,
             backgroundColor: 'inherit',

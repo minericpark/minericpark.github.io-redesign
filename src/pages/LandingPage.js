@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import LandingFront from "../components/LandingFront";
+import LandingBlock from "../components/LandingBlock";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -22,7 +22,7 @@ const mainFeaturedPost = {
     titles: titles,
     image: 'https://images.pexels.com/photos/4067774/pexels-photo-4067774.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     imageRef: 'Landing Page Image (By Lisa Fotios)',
-    video: '/videos/studiogoindol(itsokayevenifyoucantseetheend).mp4',
+    video: 'https://github.com/minericpark/minericpark.github.io-redesign/blob/master/public/videos/studiogoindol(itsokayevenifyoucantseetheend).mp4?raw=true',
     videoRef: 'Landing Page Video (By Studio Goindol)',
 };
 
@@ -34,7 +34,7 @@ function LandingPage() {
             <CssBaseline />
             <div className={classes.root} key={"mainContainer"}>
                 <main>
-                    <LandingFront post={mainFeaturedPost}/>
+                    <LandingBlock post={mainFeaturedPost}/>
                 </main>
             </div>
         </React.Fragment>

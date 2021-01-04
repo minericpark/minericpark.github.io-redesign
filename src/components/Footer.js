@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {makeStyles} from '@material-ui/core/styles';
+import SocialsCard from "./subcomponents/SocialsCard";
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import Grid from "@material-ui/core/Grid";
-import { motion } from "framer-motion";
-import {IconContext} from "react-icons";
 import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles((theme) => ({
@@ -16,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
     footer: {
         position: "relative",
         padding: theme.spacing(2),
+        backgroundColor: theme.palette.background.paper,
     }
 }));
 
@@ -32,29 +32,6 @@ function Copyright() {
     );
 }
 
-//Socials + Links for footer
-function Socials(props) {
-    const { social } = props;
-
-    return (
-        <React.Fragment>
-            <Grid container direction="row" justify="flex-start" alignItems="center" spacing={1} key={"socials"}>
-                {social.map((network) => (
-                    <Grid item key={"socials" + network.name}>
-                        <motion.div whileHover={{ scale: 1.3 }}>
-                            <IconContext.Provider value={{ style: {fontSize: '23px', color: 'inherit'}}}>
-                                <Link display="block" variant="body1" href={network.link} key={network.name}>
-                                    <network.icon />
-                                </Link>
-                            </IconContext.Provider>
-                        </motion.div>
-                    </Grid>
-                ))}
-            </Grid>
-        </React.Fragment>
-    );
-}
-
 //BlogPosts footer structure
 function Footer(props) {
     const classes = useStyles();
@@ -64,7 +41,7 @@ function Footer(props) {
         <div className={classes.root} key={"footer"}>
             <Box className={classes.footer} component={Grid} boxShadow={3} container direction="row" justify="space-between" alignItems="center" key={"footerGrid"}>
                 <Grid item key={"footerSocials"}>
-                    <Socials social={social}/>
+                    <SocialsCard social={social} gridDirection='row'/>
                 </Grid>
                 <Grid item key={"footerCopyright"}>
                     <Copyright />

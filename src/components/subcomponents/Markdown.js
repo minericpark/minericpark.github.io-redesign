@@ -11,6 +11,10 @@ const styles = (theme) => ({
     listItem: {
         marginTop: theme.spacing(0),
     },
+    divider: {
+        color: theme.palette.primary.main,
+        marginBottom: theme.spacing(2),
+    },
 });
 
 const options = {
