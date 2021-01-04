@@ -25,6 +25,15 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+const transition = {
+    duration: 0.5,
+};
+
+const videoVariants = {
+    enter: { opacity: 1, transition },
+    exit: { opacity: 0, transition },
+};
+
 function VideoBackgroundCredit() {
     const classes = useStyles();
 
@@ -45,7 +54,7 @@ function LandingBlock(props) {
     const { post } = props;
 
     return (
-        <div>
+        <motion.div initial="exit" animate="enter" exit="exit" variants={videoVariants}>
             <VideoBackground videoSrc={post.video}/>
             <Grid container spacing={0} align="center" justify="center" direction="column" style={{minHeight: '50vh'}}>
                 <Grid item>
@@ -57,7 +66,7 @@ function LandingBlock(props) {
                     </div>
                 </Grid>
             </Grid>
-        </div>
+        </motion.div>
     );
 }
 
