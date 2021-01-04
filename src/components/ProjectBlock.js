@@ -9,6 +9,7 @@ import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import Paper from "@material-ui/core/Paper";
 import {motion} from "framer-motion";
+import LoadingCard from "./subcomponents/LoadingCard";
 
 const useStyles = makeStyles((theme) => ({
     mainGrid: {
