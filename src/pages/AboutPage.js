@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AboutBlock from "../components/AboutBlock";
 import aboutMePost from "../components/blogposts/about-me.md";
-import {AnimatePresence, motion} from "framer-motion";
 
 const useStyles = makeStyles((theme) => ({
     root: {

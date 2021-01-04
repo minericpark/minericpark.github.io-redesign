@@ -1,9 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
 import Markdown from './Markdown';
 import Card from "@material-ui/core/Card";
 
@@ -21,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
 
 function BlogPosts(props) {
     const classes = useStyles();
-    const { posts, xsNum, mdNum } = props;
+    const { posts } = props;
 
     return (
         <div>

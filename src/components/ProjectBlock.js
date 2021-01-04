@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from "@material-ui/core/Grid";
-import githubstatistics from "../components/projectposts/githubstatistics.md";
-import githubmostusedlangs from "../components/projectposts/githubmostusedlangs.md";
 import axios from "axios";
 import RepositoryList from "../components/subcomponents/RepositoryList";
 import WithComponentLoading from "../components/subcomponents/WithComponentLoading";
@@ -47,8 +45,9 @@ const statisticVariants = {
     exit: { y: -100, opacity: 0, transition },
 };
 
-function ProjectBlock() {
+function ProjectBlock(props) {
     const classes = useStyles();
+    const { githubstatistics, githubmostusedlangs } = props;
     const ListLoading = WithComponentLoading(RepositoryList);
     const [listState, setListState] = useState({
         loading: false,

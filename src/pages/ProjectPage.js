@@ -1,7 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import ProjectBlock from "../components/ProjectBlock";
+import githubstatistics from "../components/projectposts/githubstatistics.md";
+import githubmostusedlangs from "../components/projectposts/githubmostusedlangs.md";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -32,7 +34,7 @@ function ProjectPage() {
             <CssBaseline />
             <div className={classes.root} key={"mainContainer"}>
                 <main>
-                    <ProjectBlock />
+                    <ProjectBlock githubstatistics={githubstatistics} githubmostusedlangs={githubmostusedlangs}/>
                 </main>
             </div>
         </React.Fragment>
