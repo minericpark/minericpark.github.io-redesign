@@ -17,7 +17,7 @@ function RepositoryList(props) {
     const noRepoMessage = 'No repositories loaded';
 
     if (!repos || repos.length === 0) {
-        return (<RepositoryCard subTitle={noRepoMessage}/>);
+        return (<RepositoryCard title={noRepoMessage}/>);
     }
 
     return (
