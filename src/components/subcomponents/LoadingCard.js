@@ -1,6 +1,5 @@
 import React from "react";
 import theme from "../theme";
-import {IconContext} from "react-icons";
 import {IoBuild} from "react-icons/all";
 import {makeStyles} from "@material-ui/core/styles";
 import {motion} from "framer-motion";

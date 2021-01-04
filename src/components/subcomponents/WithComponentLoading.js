@@ -1,5 +1,4 @@
 import React from 'react';
-import RepositoryCard from "./RepositoryCard";
 import LoadingCard from "./LoadingCard";
 
 function WithComponentLoading(Component) {

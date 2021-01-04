@@ -102,7 +102,7 @@ function ProjectBlock(props) {
                                 GitHub Projects
                             </Typography>
                         </motion.div>
-                        <ListLoading isLoading={listState.loading} repos={listState.repos} xsNum={3}/>
+                        <ListLoading isLoading={listState.loading} repos={listState.repos} xsNum={4}/>
                     </motion.div>
                 </Grid>
             </Grid>
