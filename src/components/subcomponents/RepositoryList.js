@@ -22,7 +22,7 @@ function RepositoryList(props) {
 
     return (
         <motion.div variants={{ enter: { transition: { staggerChildren: 0.3 } } }}>
-            <Grid container spacing={3}>
+            <Grid container spacing={4}>
                 {repos.filter(repo => repo.fork === false)
                     .filter(repo => repo.language != null)
                     .sort(function(a, b) {

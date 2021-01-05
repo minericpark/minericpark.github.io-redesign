@@ -11,7 +11,6 @@ import Card from "@material-ui/core/Card";
 const useStyles = makeStyles((theme) => ({
     mainGrid: {
         margin: '0px',
-        paddingBottom: '3%',
     },
     markdown: {
         ...theme.typography.body2,
