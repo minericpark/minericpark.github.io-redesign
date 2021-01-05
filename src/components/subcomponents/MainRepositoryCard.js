@@ -5,6 +5,7 @@ import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
+import { GiCube } from "react-icons/gi";
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -13,6 +14,16 @@ const useStyles = makeStyles((theme) => ({
     },
     buttonGrid: {
 
+    },
+    iconGrid: {
+        justifyContent: 'center',
+        alignContent: 'center',
+    },
+    loadIcon: {
+        fontSize: '35px',
+        textAlign: 'center',
+        margin: '0 auto',
+        color: theme.palette.secondary.main
     },
 }));
 
@@ -24,7 +35,21 @@ function MainRepositoryCard(props) {
         <motion.div whileHover={{ scale: 1.1 }}>
             <Paper className={classes.paper}>
                 <Grid container spacing={2} direction={direction} justify='center' alignItems={textAlignment}>
-                    <Grid item xs={12}>
+                    <Grid item xs={1} className={classes.iconGrid}>
+                        <motion.div className={classes.loadIcon}
+                                    animate={{
+                                        scale: [1, 1.1, 1.1, 1, 1],
+                                    }}
+                                    transition={{
+                                        duration: 2,
+                                        loop: Infinity,
+                                        repeatDelay: 7
+                                    }}
+                        >
+                            < GiCube/>
+                        </motion.div>
+                    </Grid>
+                    <Grid item xs={11}>
                         <Typography variant="h6" gutterBottom key={'title:' + title} color="primary">
                             {title}
                         </Typography>
