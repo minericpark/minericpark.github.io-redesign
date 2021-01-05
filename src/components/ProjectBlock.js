@@ -9,7 +9,7 @@ import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import Paper from "@material-ui/core/Paper";
 import {motion} from "framer-motion";
-import LoadingCard from "./subcomponents/LoadingCard";
+import SmallRepositoryList from "./subcomponents/SmallRepositoryList";
 
 const useStyles = makeStyles((theme) => ({
     mainGrid: {
@@ -50,6 +50,7 @@ function ProjectBlock(props) {
     const classes = useStyles();
     const { githubstatistics, githubmostusedlangs } = props;
     const ListLoading = WithComponentLoading(RepositoryList);
+    const MainListLoading = WithComponentLoading(SmallRepositoryList);
     const [listState, setListState] = useState({
         loading: false,
         repos: null,
@@ -99,7 +100,15 @@ function ProjectBlock(props) {
                     <motion.div variants={{ enter: { transition: { staggerChildren: 0.4 } } }}>
                         <motion.div variants={subtitleVariants}>
                             <Typography variant="subtitle1" gutterBottom className={classes.subheader} color="secondary">
-                                GitHub Projects
+                                Main Projects
+                            </Typography>
+                        </motion.div>
+                        <MainListLoading isLoading={listState.loading} repos={listState.repos} xsNum={6}/>
+                    </motion.div>
+                    <motion.div variants={{ enter: { transition: { staggerChildren: 0.4 } } }}>
+                        <motion.div variants={subtitleVariants}>
+                            <Typography variant="subtitle1" gutterBottom className={classes.subheader} color="secondary">
+                                All Projects
                             </Typography>
                         </motion.div>
                         <ListLoading isLoading={listState.loading} repos={listState.repos} xsNum={4}/>

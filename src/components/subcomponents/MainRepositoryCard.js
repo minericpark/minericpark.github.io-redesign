@@ -5,7 +5,6 @@ import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import Link from "@material-ui/core/Link";
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -17,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function RepositoryCard(props) {
+function MainRepositoryCard(props) {
     const classes = useStyles();
     const { title, subTitle, mainText, direction, textAlignment, href } = props;
 
@@ -26,11 +25,9 @@ function RepositoryCard(props) {
             <Paper className={classes.paper}>
                 <Grid container spacing={2} direction={direction} justify='center' alignItems={textAlignment}>
                     <Grid item xs={12}>
-                        <Link href={href}>
-                            <Typography variant="h6" gutterBottom key={'title:' + title} color="primary">
-                                {title}
-                            </Typography>
-                        </Link>
+                        <Typography variant="h6" gutterBottom key={'title:' + title} color="primary">
+                            {title}
+                        </Typography>
                         <Typography variant="h7" gutterBottom key={'subtitle:' + subTitle} color="secondary">
                             {subTitle}
                         </Typography>
@@ -40,10 +37,15 @@ function RepositoryCard(props) {
                             {mainText}
                         </Typography>
                     </Grid>
+                    <Grid item xs={12} textAlign='center' className={classes.buttonGrid}>
+                        <Button href={href} variant="contained" color="primary" disableElevation>
+                            Repository
+                        </Button>
+                    </Grid>
                 </Grid>
             </Paper>
         </motion.div>
     );
 }
 
-export default RepositoryCard;
+export default MainRepositoryCard;
