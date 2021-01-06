@@ -43,7 +43,7 @@ function MainRepositoryCard(props) {
                                     transition={{
                                         duration: 2,
                                         loop: Infinity,
-                                        repeatDelay: 7
+                                        repeatDelay: 3
                                     }}
                         >
                             < GiCube/>

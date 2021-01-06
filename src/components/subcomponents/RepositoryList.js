@@ -2,6 +2,7 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import { motion } from "framer-motion";
 import RepositoryCard from "./RepositoryCard";
+import Card from "@material-ui/core/Card";
 
 const transition = {
     duration: 0.5,
@@ -30,9 +31,9 @@ function RepositoryList(props) {
                     })
                     .map((repo) => (
                         <Grid item xs={xsNum} md={mdNum}>
-                            <motion.div variants={projectVariants}>
+                            <Card style={{height: '100%'}} component={motion.div} variants={projectVariants} whileHover={{ scale: 1.1 }}>
                                 <RepositoryCard title={repo.full_name} subTitle={repo.language} mainText={repo.description} href={repo.html_url}/>
-                            </motion.div>
+                            </Card>
                         </Grid>
                 ))}
             </Grid>
