@@ -14,26 +14,20 @@ const useStyles = makeStyles((theme) => ({
     root: {
         backgroundColor: theme.palette.primary.contrastText,
         fontFamily: theme.typography.fontFamily,
+        color: theme.palette.primary.lighterMain,
+        overflowX: 'auto',
     },
     altRoot: {
         background: 'transparent',
         boxShadow: 'none',
         fontFamily: theme.typography.fontFamily,
+        color: theme.palette.primary.contrastText,
+        overflowX: 'auto',
     },
     space: {
         flexGrow: 1,
     },
     offset: theme.mixins.toolbar,
-    headerNav: {
-        marginLeft: theme.spacing(4),
-        textDecoration: 'none',
-        color: theme.palette.primary.lighterMain,
-    },
-    altHeaderNav: {
-        marginLeft: theme.spacing(4),
-        textDecoration: 'none',
-        color: theme.palette.primary.contrastText,
-    }
 }));
 
 function isHome(givenLocation) {
@@ -59,12 +53,7 @@ function Header(props) {
                         </motion.div>
                         <div className={classes.space} key={"headerDiv"}/>
                         {sections.map((section) => (
-                            <Link
-                                className={classes.altHeaderNav}
-                                key={section.title}
-                                to={section.url}>
-                                <HeaderNav section={section} key={"link" + section.title}/>
-                            </Link>
+                            <HeaderNav section={section} link={section.url} key={"link" + section.title}/>
                         ))}
                     </Toolbar>
                 </AppBar>
@@ -85,12 +74,7 @@ function Header(props) {
                         </motion.div>
                         <div className={classes.space} key={"headerDiv"}/>
                         {sections.map((section) => (
-                            <Link
-                                className={classes.headerNav}
-                                key={section.title}
-                                to={section.url}>
-                                <HeaderNav section={section} key={"link" + section.title}/>
-                            </Link>
+                            <HeaderNav section={section} link={section.url} key={"link" + section.title}/>
                         ))}
                     </Toolbar>
                 </AppBar>

@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
+import BottomNavigation from "@material-ui/core/BottomNavigation";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -38,7 +39,7 @@ function Footer(props) {
     const { social } = props;
 
     return (
-        <div className={classes.root} key={"footer"}>
+        <BottomNavigation className={classes.root} key={"footer"}>
             <Box className={classes.footer} component={Grid} boxShadow={3} container direction="row" justify="space-between" alignItems="center" key={"footerGrid"}>
                 <Grid item key={"footerSocials"}>
                     <SocialsCard social={social} gridDirection='row'/>
@@ -47,7 +48,7 @@ function Footer(props) {
                     <Copyright />
                 </Grid>
             </Box>
-        </div>
+        </BottomNavigation>
     );
 }
 

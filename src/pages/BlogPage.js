@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
         width: '80%',
         margin: '0 auto',
-        minHeight: '85vh',
+        minHeight: '90vh',
     },
     mainGrid: {
         margin: '1px',

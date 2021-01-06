@@ -4,12 +4,13 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import ProjectBlock from "../components/ProjectBlock";
 import githubstatistics from "../components/projectposts/githubstatistics.md";
 import githubmostusedlangs from "../components/projectposts/githubmostusedlangs.md";
+import hackathon1 from "../components/projectposts/hackathon1.md";
 
 const useStyles = makeStyles((theme) => ({
     root: {
         width: '80%',
         margin: '0 auto',
-        minHeight: '85vh',
+        minHeight: '90vh',
     },
     mainGrid: {
         margin: '1px',
@@ -34,7 +35,7 @@ function ProjectPage() {
             <CssBaseline />
             <div className={classes.root} key={"mainContainer"}>
                 <main>
-                    <ProjectBlock githubstatistics={githubstatistics} githubmostusedlangs={githubmostusedlangs}/>
+                    <ProjectBlock githubstatistics={githubstatistics} githubmostusedlangs={githubmostusedlangs} hackathon1={hackathon1}/>
                 </main>
             </div>
         </React.Fragment>
