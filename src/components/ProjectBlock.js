@@ -25,6 +25,10 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(1),
         backgroundColor: theme.palette.grey[200],
     },
+    hackathonBox: {
+        padding: theme.spacing(1),
+        backgroundColor: theme.palette.grey[200],
+    },
 }));
 
 const transition = {
@@ -48,7 +52,7 @@ const statisticVariants = {
 
 function ProjectBlock(props) {
     const classes = useStyles();
-    const { githubstatistics, githubmostusedlangs } = props;
+    const { githubstatistics, githubmostusedlangs, hackathon1 } = props;
     const ListLoading = WithComponentLoading(RepositoryList);
     const MainListLoading = WithComponentLoading(SmallRepositoryList);
     const [listState, setListState] = useState({
@@ -105,6 +109,22 @@ function ProjectBlock(props) {
                         </motion.div>
                         <MainListLoading isLoading={listState.loading} repos={listState.repos} xsNum={6}/>
                     </motion.div>
+                    <motion.div variants={subtitleVariants}>
+                        <Typography variant="subtitle1" gutterBottom className={classes.subheader} color="secondary">
+                            Hackathon Attendance
+                        </Typography>
+                    </motion.div>
+                    <Grid container spacing={2} alignContent='center' justify='center'>
+                        <motion.div variants={statisticVariants}>
+                            <Paper className={classes.hackathonBox} elevation={0}>
+                                <Grid item>
+                                    <Markdown>
+                                        {hackathon1}
+                                    </Markdown>
+                                </Grid>
+                            </Paper>
+                        </motion.div>
+                    </Grid>
                     <motion.div variants={{ enter: { transition: { staggerChildren: 0.4 } } }}>
                         <motion.div variants={subtitleVariants}>
                             <Typography variant="subtitle1" gutterBottom className={classes.subheader} color="secondary">
