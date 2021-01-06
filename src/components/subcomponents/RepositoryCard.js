@@ -20,19 +20,21 @@ function RepositoryCard(props) {
     const { title, subTitle, mainText, href } = props;
 
     return (
-        <CardContent>
-            <Link href={href}>
-                <Typography variant="h6" gutterBottom key={'title:' + title} color="primary">
-                    {title}
+        <Grid item xs component={Card} className={classes.paper}>
+            <CardContent>
+                <Link href={href}>
+                    <Typography variant="h6" gutterBottom key={'title:' + title} color="primary">
+                        {title}
+                    </Typography>
+                </Link>
+                <Typography variant="body2" gutterBottom key={'subtitle:' + subTitle} color="secondary">
+                    {subTitle}
                 </Typography>
-            </Link>
-            <Typography variant="body2" gutterBottom key={'subtitle:' + subTitle} color="secondary">
-                {subTitle}
-            </Typography>
-            <Typography variant="body1" key={'mainText:' + mainText} color="tertiary">
-                {mainText}
-            </Typography>
-        </CardContent>
+                <Typography variant="body1" key={'mainText:' + mainText} color="tertiary">
+                    {mainText}
+                </Typography>
+            </CardContent>
+        </Grid>
     );
 }
 

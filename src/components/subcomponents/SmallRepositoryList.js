@@ -3,6 +3,7 @@ import Grid from "@material-ui/core/Grid";
 import { motion } from "framer-motion";
 import RepositoryCard from "./RepositoryCard";
 import MainRepositoryCard from "./MainRepositoryCard";
+import Card from "@material-ui/core/Card";
 
 const transition = {
     duration: 0.5,
@@ -38,9 +39,9 @@ function SmallRepositoryList(props) {
                     .filter(repo => mainProjectsArray.indexOf(repo.name) >= 0)
                     .map((repo) => (
                         <Grid item xs={xsNum} md={mdNum}>
-                            <motion.div variants={projectVariants}>
+                            <Card style={{height: '100%'}} component={motion.div} variants={projectVariants} whileHover={{ scale: 1.1 }}>
                                 <MainRepositoryCard title={repo.name} subTitle={repo.language} mainText={repo.description} href={repo.html_url}/>
-                            </motion.div>
+                            </Card>
                         </Grid>
                     ))}
             </Grid>
