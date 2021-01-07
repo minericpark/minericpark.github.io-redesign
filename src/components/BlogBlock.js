@@ -57,6 +57,7 @@ function BlogBlock(props) {
                 <Grid item xs={12} md={4}>
                     <motion.div variants={sidebarVariants}>
                         <Sidebar
+                            archiveTitle={sidebar.archivetitle}
                             title={sidebar.title}
                             description={sidebar.description}
                             archives={sidebar.archives}

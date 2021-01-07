@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Sidebar(props) {
     const classes = useStyles();
-    const { archives, description, title } = props;
+    const { archiveTitle, archives, description, title } = props;
 
     return (
         <div>
@@ -29,7 +29,7 @@ function Sidebar(props) {
                 <Typography color="primary">{description}</Typography>
             </Paper>
             <Typography color="primary" variant="h6" gutterBottom className={classes.sidebarSection}>
-                Project Archives
+                {archiveTitle}
             </Typography>
             {archives.map((archive) => (
                 <Link color="secondary" display="block" variant="body1" href={archive.url} key={archive.title}>

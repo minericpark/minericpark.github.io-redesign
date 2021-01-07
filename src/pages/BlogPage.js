@@ -20,9 +20,11 @@ const useStyles = makeStyles((theme) => ({
 const sidebarElements = {
     title: 'What\'s up with Min?',
     description:
-        'I\'m currently redesigning my personal website and preparing for school!',
+        'I\'m currently patching my newly hosted personal website and preparing for my first hackathon, HTN2020!',
+    archivetitle:
+        'Miscellaneous Archives',
     archives: [
-        { title: 'Website Redesign Repository', url: 'https://github.com/minericpark/minericpark.github.io-redesign' },
+        { title: 'Empty' },
     ],
 };
 
