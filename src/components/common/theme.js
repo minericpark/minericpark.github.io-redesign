@@ -1,5 +1,5 @@
 import { createMuiTheme } from '@material-ui/core';
-import '../App.css';
+import '../../App.css';
 
 const mainFont = "'Nunito', sans-serif";
 

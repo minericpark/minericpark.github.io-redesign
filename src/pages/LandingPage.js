@@ -1,13 +1,13 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import LandingBlock from "../components/LandingBlock";
+import LandingBlock from "./blocks/LandingBlock";
 
 const useStyles = makeStyles((theme) => ({
     root: {
         width: '100%',
         margin: '0 auto',
-        minHeight: '90vh',
+        minHeight: '88.9vh',
     },
 }));
 

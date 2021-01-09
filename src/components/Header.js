@@ -6,7 +6,7 @@ import HeaderNav from './subcomponents/HeaderNav.js';
 import { motion } from "framer-motion";
 import { GiAcorn } from "react-icons/gi";
 import { IconContext } from "react-icons";
-import theme from "./theme";
+import theme from "./common/theme";
 import AppBar from "@material-ui/core/AppBar";
 import { Link, useLocation } from "react-router-dom";
 

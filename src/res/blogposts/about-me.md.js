@@ -25,11 +25,8 @@ I'm pretty much in a journey-man mode. I seek to figure out what sort of niche d
 putting out my best effort and work into my career. 
 
 I got into software development during the current *COVID19 pandemic*. It sounds funny, especially since I've been enrolled 
-into the program for 2 years now, but I like being able to help people through software. Even putting out anything remotely
-useful is satisfying to me, as long as it has some sort of purpose.
-
-Whether I go into something specific like cyber security or full-stack development is something I'm still determining by experiencing
-and learning continuously. However the purpose remains simple: support, assist or protect people through technological means.
+into the program for 2 years now, but I found enjoyment in development much later on, once I actually got into work during
+my first co-op term. Despite this, I enjoy having a main purpose in development: to aid people with their various needs.
 
 I am also pursuing a minor in Psychology due to its potential use in understanding people's needs and effectively what they want. 
 By understanding this, I hope to become more successful and influential in any development I take part in.

@@ -1,16 +1,16 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import ProjectBlock from "../components/ProjectBlock";
-import githubstatistics from "../components/projectposts/githubstatistics.md";
-import githubmostusedlangs from "../components/projectposts/githubmostusedlangs.md";
-import hackathon1 from "../components/projectposts/hackathon1.md";
+import ProjectBlock from "./blocks/ProjectBlock";
+import githubstatistics from "../res/projectposts/githubstatistics.md";
+import githubmostusedlangs from "../res/projectposts/githubmostusedlangs.md";
+import hackathon1 from "../res/projectposts/hackathon1.md";
 
 const useStyles = makeStyles((theme) => ({
     root: {
         width: '80%',
         margin: '0 auto',
-        minHeight: '90vh',
+        minHeight: '88.9vh',
     },
     mainGrid: {
         margin: '1px',

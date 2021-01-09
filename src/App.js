@@ -13,10 +13,10 @@ import {AnimatePresence} from "framer-motion";
 
 const header = {
     sections: [
-        { title: 'Blog', url: '/blog' },
+        { title: 'About Me', url: '/about' },
         { title: 'Projects', url: '/projects' },
         { title: 'Profession', url: '/profession' },
-        { title: 'About Me', url: '/about' },
+        { title: 'Blog', url: '/blog' },
     ],
 };
 
