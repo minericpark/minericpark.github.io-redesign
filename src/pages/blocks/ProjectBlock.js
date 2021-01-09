@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from "@material-ui/core/Grid";
 import axios from "axios";
-import RepositoryList from "../../components/RepositoryList";
+import RepositoryList from "../../components/subcomponents/RepositoryList";
 import WithComponentLoading from "../../components/WithComponentLoading";
 import Markdown from "markdown-to-jsx";
 import Typography from "@material-ui/core/Typography";
@@ -10,7 +10,7 @@ import Divider from "@material-ui/core/Divider";
 import Paper from "@material-ui/core/Paper";
 import {motion} from "framer-motion";
 import SmallRepositoryList from "../../components/SmallRepositoryList";
-import RepositoryDropdown from "../../components/RepositoryDropdown";
+import RepositoryAccordion from "../../components/RepositoryAccordion";
 
 const useStyles = makeStyles((theme) => ({
     mainGrid: {
@@ -126,14 +126,12 @@ function ProjectBlock(props) {
                             </Paper>
                         </motion.div>
                     </Grid>
-                    <motion.div variants={{ enter: { transition: { staggerChildren: 0.4 } } }}>
-                        <motion.div variants={subtitleVariants}>
-                            <Typography variant="subtitle1" gutterBottom className={classes.subheader} color="secondary">
-                                All Projects
-                            </Typography>
-                        </motion.div>
-                        <RepositoryDropdown listState={listState}/>
+                    <motion.div variants={subtitleVariants}>
+                        <Typography variant="subtitle1" gutterBottom className={classes.subheader} color="secondary">
+                            All Projects
+                        </Typography>
                     </motion.div>
+                    <RepositoryAccordion listState={listState}/>
                 </Grid>
             </Grid>
         </motion.div>
