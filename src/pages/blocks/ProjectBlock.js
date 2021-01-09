@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from "@material-ui/core/Grid";
 import axios from "axios";
-import RepositoryList from "../../components/subcomponents/RepositoryList";
 import WithComponentLoading from "../../components/WithComponentLoading";
 import Markdown from "markdown-to-jsx";
 import Typography from "@material-ui/core/Typography";
@@ -54,7 +53,6 @@ const statisticVariants = {
 function ProjectBlock(props) {
     const classes = useStyles();
     const { githubstatistics, githubmostusedlangs, hackathon1 } = props;
-    const ListLoading = WithComponentLoading(RepositoryList);
     const MainListLoading = WithComponentLoading(SmallRepositoryList);
     const [listState, setListState] = useState({
         loading: false,
