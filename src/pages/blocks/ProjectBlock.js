@@ -2,15 +2,15 @@ import React, {useEffect, useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from "@material-ui/core/Grid";
 import axios from "axios";
-import RepositoryList from "../../components/subcomponents/RepositoryList";
-import WithComponentLoading from "../../components/subcomponents/WithComponentLoading";
+import RepositoryList from "../../components/RepositoryList";
+import WithComponentLoading from "../../components/WithComponentLoading";
 import Markdown from "markdown-to-jsx";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import Paper from "@material-ui/core/Paper";
 import {motion} from "framer-motion";
-import SmallRepositoryList from "../../components/subcomponents/SmallRepositoryList";
-import RepositoryDropdown from "../../components/subcomponents/RepositoryDropdown";
+import SmallRepositoryList from "../../components/SmallRepositoryList";
+import RepositoryDropdown from "../../components/RepositoryDropdown";
 
 const useStyles = makeStyles((theme) => ({
     mainGrid: {

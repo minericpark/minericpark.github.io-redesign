@@ -1,5 +1,5 @@
 import React from 'react';
-import LoadingCard from "./LoadingCard";
+import LoadingCard from "./subcomponents/LoadingCard";
 
 function WithComponentLoading(Component) {
 

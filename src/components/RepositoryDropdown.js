@@ -1,7 +1,7 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 import { motion } from "framer-motion";
-import RepositoryCard from "./RepositoryCard";
+import RepositoryCard from "./subcomponents/RepositoryCard";
 import Card from "@material-ui/core/Card";
 import Menu from "@material-ui/core/Menu";
 import WithComponentLoading from "./WithComponentLoading";

@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import FadingTextCycle from "../../components/subcomponents/FadingTextCycle";
-import VideoBackground from "../../components/subcomponents/VideoBackground";
+import FadingTextCycle from "../../components/FadingTextCycle";
+import VideoBackground from "../../components/VideoBackground";
 import { motion } from "framer-motion";
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';

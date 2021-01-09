@@ -3,8 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import MainFeaturedPost from '../components/subcomponents/MainFeaturedPost';
-import BlogPosts from '../components/subcomponents/BlogPosts';
-import Sidebar from '../components/subcomponents/Sidebar';
+import BlogPosts from '../components/BlogPosts';
+import Sidebar from '../components/Sidebar';
 import post1 from '../res/blogposts/blog-post.1.md.js';
 
 const useStyles = makeStyles((theme) => ({
