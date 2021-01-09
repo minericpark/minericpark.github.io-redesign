@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
         width: '80%',
         margin: '0 auto',
-        minHeight: '90vh',
+        minHeight: '88.9vh',
     },
 }));
 
