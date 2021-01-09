@@ -21,7 +21,7 @@ function RepositoryList(props) {
                 })
                 .map((repo) => (
                     <Grid item xs={xsNum} md={mdNum}>
-                        <Card style={{height: '100%'}} component={motion.div} whileHover={{ scale: 1.1 }}>
+                        <Card style={{height: '100%'}} component={motion.div} whileHover={{ scale: 1.05 }}>
                             <RepositoryCard title={repo.full_name} subTitle={repo.language} mainText={repo.description} href={repo.html_url}/>
                         </Card>
                     </Grid>

@@ -39,7 +39,7 @@ function SmallRepositoryList(props) {
                     .filter(repo => mainProjectsArray.indexOf(repo.name) >= 0)
                     .map((repo) => (
                         <Grid item xs={xsNum} md={mdNum}>
-                            <Card style={{height: '100%'}} component={motion.div} variants={projectVariants} whileHover={{ scale: 1.1 }}>
+                            <Card style={{height: '100%'}} component={motion.div} variants={projectVariants} whileHover={{ scale: 1.05 }}>
                                 <MainRepositoryCard title={repo.name} subTitle={repo.language} mainText={repo.description} href={repo.html_url}/>
                             </Card>
                         </Grid>
