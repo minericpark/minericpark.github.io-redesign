@@ -5,7 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import MainFeaturedPost from '../components/subcomponents/MainFeaturedPost';
 import BlogPosts from '../components/subcomponents/BlogPosts';
 import Sidebar from '../components/subcomponents/Sidebar';
-import post1 from '../components/blogposts/blog-post.1.md.js';
+import post1 from '../res/blogposts/blog-post.1.md.js';
 
 const useStyles = makeStyles((theme) => ({
     root: {

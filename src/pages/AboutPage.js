@@ -1,8 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import AboutBlock from "../components/AboutBlock";
-import aboutMePost from "../components/blogposts/about-me.md";
+import AboutBlock from "./blocks/AboutBlock";
+import aboutMePost from "../res/blogposts/about-me.md";
 
 const useStyles = makeStyles((theme) => ({
     root: {

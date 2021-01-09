@@ -1,10 +1,10 @@
 import React from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import {makeStyles} from "@material-ui/core/styles";
-import post1 from "../components/blogposts/blog-post.1.md";
-import post2 from "../components/blogposts/blog-post.2.md";
-import post3 from "../components/blogposts/blog-post.3.md";
-import BlogBlock from "../components/BlogBlock";
+import post1 from "../res/blogposts/blog-post.1.md";
+import post2 from "../res/blogposts/blog-post.2.md";
+import post3 from "../res/blogposts/blog-post.3.md";
+import BlogBlock from "./blocks/BlogBlock";
 
 const useStyles = makeStyles((theme) => ({
     root: {

@@ -1,12 +1,12 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import subtitle1 from "../components/professionposts/work-experience1.md";
-import workportfolio1 from "../components/professionposts/work-experience1-2.md";
-import subtitle2 from "../components/professionposts/work-experience2.md";
-import workportfolio2 from "../components/professionposts/work-experience2-2.md";
-import educationportfolio1 from "../components/professionposts/education-experience.md";
-import ProfessionBlock from "../components/ProfessionBlock";
+import subtitle1 from "../res/professionposts/work-experience1.md";
+import workportfolio1 from "../res/professionposts/work-experience1-2.md";
+import subtitle2 from "../res/professionposts/work-experience2.md";
+import workportfolio2 from "../res/professionposts/work-experience2-2.md";
+import educationportfolio1 from "../res/professionposts/education-experience.md";
+import ProfessionBlock from "./blocks/ProfessionBlock";
 
 const useStyles = makeStyles((theme) => ({
     root: {
