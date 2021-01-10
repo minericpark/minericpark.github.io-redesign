@@ -26,11 +26,6 @@ const titleVariants = {
     exit: { y: -100, opacity: 0, transition },
 };
 
-const blogVariants = {
-    enter: { opacity: 1, transition },
-    exit: { opacity: 0, transition },
-};
-
 const sidebarVariants = {
     enter: { opacity: 1, transition },
     exit: { opacity: 0, transition },
@@ -50,9 +45,7 @@ function BlogBlock(props) {
                         </Typography>
                         <Divider />
                     </motion.div>
-                    <motion.div variants={blogVariants}>
-                        <BlogPosts title="Blog" posts={posts} xsNum="12" mdNum="8"/>
-                    </motion.div>
+                    <BlogPosts posts={posts}/>
                 </Grid>
                 <Grid item xs={12} md={4}>
                     <motion.div variants={sidebarVariants}>

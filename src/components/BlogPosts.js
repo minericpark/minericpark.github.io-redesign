@@ -1,35 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import Markdown from './Markdown';
-import Card from "@material-ui/core/Card";
+import BlogAccordion from "./subcomponents/BlogAccordion";
+import {motion} from "framer-motion";
 
 const useStyles = makeStyles((theme) => ({
-    markdown: {
-        ...theme.typography.body2
-    },
-    card: {
-        backgroundColor: theme.palette.common.white,
-        padding: theme.spacing(2.5, 2.5),
-        marginTop: theme.spacing(2)
-    }
 
 }));
+
+const transition = {
+    duration: 0.5,
+};
+
+const blogVariants = {
+    enter: { x: 0, opacity: 1, transition },
+    exit: { x: -100, opacity: 0, transition },
+};
 
 function BlogPosts(props) {
     const classes = useStyles();
     const { posts } = props;
 
     return (
-        <div>
-            {posts.map((post) => (
-                <Card className={classes.card}>
-                    <Markdown className={classes.markdown} key={post.substring(0, 40)}>
-                        {post}
-                    </Markdown>
-                </Card>
-            ))}
-        </div>
+            <motion.div variants={{ enter: { transition: { staggerChildren: 0.4 } } }}>
+                {posts.map((post) => (
+                    <motion.div variants={blogVariants}>
+                        <BlogAccordion post={post}/>
+                    </motion.div>
+                ))}
+            </motion.div>
     );
 }
 
@@ -37,7 +36,4 @@ export default BlogPosts;
 
 BlogPosts.propTypes = {
     posts: PropTypes.array,
-    title: PropTypes.string,
-    xsNum: PropTypes.string,
-    mdNum: PropTypes.string,
 };

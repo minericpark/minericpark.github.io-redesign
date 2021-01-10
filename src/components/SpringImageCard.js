@@ -5,7 +5,7 @@ import {AnimateSharedLayout, AnimatePresence, motion} from "framer-motion";
 import ButtonBase from "@material-ui/core/ButtonBase";
 import Grid from '@material-ui/core/Grid';
 import Paper from "@material-ui/core/Paper";
-import Markdown from './Markdown';
+import Markdown from './subcomponents/Markdown';
 import Card from "@material-ui/core/Card";
 
 const useStyles = makeStyles((theme) => ({

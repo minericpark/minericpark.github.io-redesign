@@ -1,9 +1,4 @@
 export default `
-
-# My Work Term Report as a Software Developer @ NCR Corporation
-
-#### December 26, 2020 by [Min](/)
-
 As part of the occasional blog posts I will make, I will also be including my work term reports for academic purposes.
 
 I will begin by clarifying firstly that for each of these reports, I plan to follow a blog-like style of describing my 
@@ -12,7 +7,7 @@ time with this following company, and that through each post I make per term, a 
 
 <img src="images/blogposts/NCRLogo.png"
      alt="NCR Logo"
-     style="margin-left: auto; margin-right: auto; display: block; width: 45%; height: 45%" />
+     style="margin-left: auto; margin-right: auto; display: block; width: 45%;" />
 
 ## Information about the employer
 NCR Corporation is an American fintech company that provides both software and hardware solutions for banking and commerce 
