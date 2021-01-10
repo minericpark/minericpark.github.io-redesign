@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
+import {motion} from "framer-motion";
 
 const useStyles = makeStyles((theme) => ({
     sidebarAboutBox: {
@@ -16,12 +17,21 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+const transition = {
+    duration: 0.5,
+};
+
+const sidebarVariants = {
+    enter: { opacity: 1, transition },
+    exit: { opacity: 0, transition },
+};
+
 function Sidebar(props) {
     const classes = useStyles();
     const { archiveTitle, archives, description, title } = props;
 
     return (
-        <div>
+        <motion.div variants={sidebarVariants}>
             <Paper elevation={0} className={classes.sidebarAboutBox}>
                 <Typography color="primary" variant="h6" gutterBottom>
                     {title}
@@ -36,7 +46,7 @@ function Sidebar(props) {
                     {archive.title}
                 </Link>
             ))}
-        </div>
+        </motion.div>
     );
 }
 

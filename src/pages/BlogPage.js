@@ -7,7 +7,7 @@ import post2 from "../res/blogposts/blog-post.2.md";
 import posttitle2 from "../res/blogposts/blog-post-title.2.md";
 import post3 from "../res/blogposts/blog-post.3.md";
 import posttitle3 from "../res/blogposts/blog-post-title.3.md";
-import BlogBlock from "./blocks/BlogBlock";
+import BlogGrid from "./blocks/BlogGrid";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -54,7 +54,7 @@ function BlogPage() {
             <CssBaseline />
             <div className={classes.root} key={"mainContainer"}>
                 <main>
-                    <BlogBlock posts={posts} sidebar={sidebarElements}/>
+                    <BlogGrid posts={posts} sidebar={sidebarElements}/>
                 </main>
             </div>
         </React.Fragment>
