@@ -22,7 +22,7 @@ const imageVariants = {
     exit: { x: -100, opacity: 0, transition },
 };
 
-function AboutMeImageCard(props) {
+function MainImageCard(props) {
     const classes = useStyles();
     const { images } = props;
 
@@ -35,8 +35,8 @@ function AboutMeImageCard(props) {
     );
 }
 
-export default AboutMeImageCard;
+export default MainImageCard;
 
-AboutMeImageCard.propTypes = {
+MainImageCard.propTypes = {
     images: PropTypes.array,
 };

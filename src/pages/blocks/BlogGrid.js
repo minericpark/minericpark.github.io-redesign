@@ -1,11 +1,11 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-import BlogPosts from "../../components/BlogPosts";
-import Sidebar from "../../components/Sidebar";
+import BlogPosts from "../../components/blog/BlogPosts";
+import Sidebar from "../../components/blog/Sidebar";
 import {makeStyles} from "@material-ui/core/styles";
 import PropTypes from "prop-types";
 import {motion} from "framer-motion";
-import PageTitle from "../../components/PageTitle";
+import PageTitle from "../../components/common/PageTitle";
 
 const useStyles = makeStyles((theme) => ({
     mainGrid: {

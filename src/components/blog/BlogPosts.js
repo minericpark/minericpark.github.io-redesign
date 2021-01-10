@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import BlogAccordion from "./subcomponents/BlogAccordion";
+import BlogAccordion from "../subcomponents/BlogAccordion";
 import {motion} from "framer-motion";
 
 const useStyles = makeStyles((theme) => ({

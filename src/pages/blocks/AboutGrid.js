@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import {motion} from "framer-motion";
 import Grid from '@material-ui/core/Grid';
-import PageTitle from "../../components/PageTitle";
-import AboutMeImageCard from "../../components/AboutMeImageCard";
-import AboutMeText from "../../components/AboutMeText";
+import PageTitle from "../../components/common/PageTitle";
+import MainImageCard from "../../components/aboutme/MainImageCard";
+import MainText from "../../components/aboutme/MainText";
 
 const useStyles = makeStyles((theme) => ({
     mainGrid: {
@@ -29,10 +29,10 @@ function AboutGrid(props) {
                     <PageTitle title={title} />
                     <div className={classes.card}>
                         <Grid item>
-                            <AboutMeImageCard images={images}/>
+                            <MainImageCard images={images}/>
                         </Grid>
                         <Grid item>
-                            <AboutMeText post={post} />
+                            <MainText post={post} />
                         </Grid>
                     </div>
                 </Grid>

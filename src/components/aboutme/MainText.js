@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import {motion} from "framer-motion";
-import Markdown from "./subcomponents/Markdown";
+import Markdown from "../subcomponents/Markdown";
 
 const useStyles = makeStyles((theme) => ({
     markdown: {
@@ -24,7 +24,7 @@ const textVariants = {
     exit: { opacity: 0, transition },
 };
 
-function AboutMeText(props) {
+function MainText(props) {
     const classes = useStyles();
     const { post } = props;
 
@@ -37,8 +37,8 @@ function AboutMeText(props) {
     );
 }
 
-export default AboutMeText;
+export default MainText;
 
-AboutMeText.propTypes = {
+MainText.propTypes = {
     post: PropTypes.string,
 };
