@@ -21,7 +21,7 @@ const titleVariants = {
     exit: { y: -100, opacity: 0, transition },
 };
 
-function BlogTitle(props) {
+function PageTitle(props) {
     const classes = useStyles();
     const { title } = props;
 
@@ -35,8 +35,8 @@ function BlogTitle(props) {
     );
 }
 
-export default BlogTitle;
+export default PageTitle;
 
-BlogTitle.propTypes = {
+PageTitle.propTypes = {
     title: PropTypes.string,
 };

@@ -5,7 +5,7 @@ import Sidebar from "../../components/Sidebar";
 import {makeStyles} from "@material-ui/core/styles";
 import PropTypes from "prop-types";
 import {motion} from "framer-motion";
-import BlogTitle from "../../components/BlogTitle";
+import PageTitle from "../../components/PageTitle";
 
 const useStyles = makeStyles((theme) => ({
     mainGrid: {
@@ -24,7 +24,7 @@ function BlogGrid(props) {
         <motion.div initial="exit" animate="enter" exit="exit">
             <Grid className={classes.mainGrid} container spacing={5}>
                 <Grid item xs='12' md='8'>
-                    <BlogTitle title={'Blog'} />
+                    <PageTitle title={'Blog'} />
                     <BlogPosts posts={posts}/>
                 </Grid>
                 <Grid item xs={12} md={4}>

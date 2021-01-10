@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import AboutBlock from "./blocks/AboutBlock";
+import AboutGrid from "./blocks/AboutGrid";
 import aboutMePost from "../res/blogposts/about-me.md";
 
 const useStyles = makeStyles((theme) => ({
@@ -27,7 +27,7 @@ function AboutPage() {
             <CssBaseline />
             <div className={classes.root} key={"mainContainer"}>
                 <main>
-                    <AboutBlock title="About Me" post={post} images={images} xsNum="12" mdNum="12"/>
+                    <AboutGrid title="About Me" post={post} images={images} xsNum="12" mdNum="12"/>
                 </main>
             </div>
         </React.Fragment>
