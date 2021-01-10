@@ -2,8 +2,7 @@ import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import {motion} from "framer-motion";
 import PropTypes from "prop-types";
-import SpringImageCard from "../../components/SpringImageCard";
-import Grid from "@material-ui/core/Grid";
+import SpringImageCard from "../subcomponents/SpringImageCard";
 
 const useStyles = makeStyles((theme) => ({
     img: {

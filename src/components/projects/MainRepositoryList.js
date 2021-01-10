@@ -1,8 +1,8 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 import { motion } from "framer-motion";
-import RepositoryCard from "./subcomponents/RepositoryCard";
-import MainRepositoryCard from "./subcomponents/MainRepositoryCard";
+import RepositoryCard from "../subcomponents/RepositoryCard";
+import MainRepositoryCard from "../subcomponents/MainRepositoryCard";
 import Card from "@material-ui/core/Card";
 
 const transition = {
@@ -14,7 +14,7 @@ const projectVariants = {
     exit: { opacity: 0, transition },
 };
 
-function SmallRepositoryList(props) {
+function MainRepositoryList(props) {
     const { repos, xsNum, mdNum } = props;
     const noRepoMessage = 'No repositories loaded';
     const mainProjectsArray = [
@@ -50,4 +50,4 @@ function SmallRepositoryList(props) {
 
 }
 
-export default SmallRepositoryList;
+export default MainRepositoryList;

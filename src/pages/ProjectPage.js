@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import ProjectBlock from "./blocks/ProjectBlock";
+import ProjectGrid from "./blocks/ProjectGrid";
 import githubstatistics from "../res/projectposts/githubstatistics.md";
 import githubmostusedlangs from "../res/projectposts/githubmostusedlangs.md";
 import hackathon1 from "../res/projectposts/hackathon1.md";
@@ -35,7 +35,7 @@ function ProjectPage() {
             <CssBaseline />
             <div className={classes.root} key={"mainContainer"}>
                 <main>
-                    <ProjectBlock githubstatistics={githubstatistics} githubmostusedlangs={githubmostusedlangs} hackathon1={hackathon1}/>
+                    <ProjectGrid githubstatistics={githubstatistics} githubmostusedlangs={githubmostusedlangs} hackathon1={hackathon1}/>
                 </main>
             </div>
         </React.Fragment>

@@ -2,7 +2,7 @@ import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import {motion} from "framer-motion";
 import PropTypes from "prop-types";
-import ImageCard from "../ImageCard";
+import ImageCard from "../subcomponents/ImageCard";
 
 const useStyles = makeStyles((theme) => ({
 
