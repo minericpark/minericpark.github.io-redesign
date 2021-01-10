@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Markdown from './Markdown';
+import Markdown from '../../common/subcomponents/Markdown';
 
 const useStyles = makeStyles((theme) => ({
     img: {

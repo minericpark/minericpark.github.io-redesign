@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import LandingGrid from "./blocks/LandingGrid";
+import LandingGrid from "./grids/LandingGrid";
 
 const useStyles = makeStyles((theme) => ({
     root: {

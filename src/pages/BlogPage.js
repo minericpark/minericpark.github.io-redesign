@@ -7,7 +7,7 @@ import post2 from "../res/blogposts/blog-post.2.md";
 import posttitle2 from "../res/blogposts/blog-post-title.2.md";
 import post3 from "../res/blogposts/blog-post.3.md";
 import posttitle3 from "../res/blogposts/blog-post-title.3.md";
-import BlogGrid from "./blocks/BlogGrid";
+import BlogGrid from "./grids/BlogGrid";
 
 const useStyles = makeStyles((theme) => ({
     root: {

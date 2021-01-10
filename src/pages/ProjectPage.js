@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import ProjectGrid from "./blocks/ProjectGrid";
+import ProjectGrid from "./grids/ProjectGrid";
 import githubstatistics from "../res/projectposts/githubstatistics.md";
 import githubmostusedlangs from "../res/projectposts/githubmostusedlangs.md";
 import hackathon1 from "../res/projectposts/hackathon1.md";

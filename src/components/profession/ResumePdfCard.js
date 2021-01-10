@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import {makeStyles} from "@material-ui/core/styles";
 import {motion} from "framer-motion";
-import PdfViewer from "../subcomponents/PdfViewer";
+import PdfViewer from "./subcomponents/PdfViewer";
 
 const useStyles = makeStyles((theme) => ({
     pdfviewer: {

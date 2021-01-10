@@ -1,10 +1,10 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 import { motion } from "framer-motion";
-import RepositoryCard from "./RepositoryCard";
+import RepositoryCard from "./subcomponents/RepositoryCard";
 import Card from "@material-ui/core/Card";
 
-function RepositoryList(props) {
+function AllRepositoryList(props) {
     const { repos, xsNum, mdNum } = props;
     const noRepoMessage = 'No repositories loaded';
 
@@ -31,4 +31,4 @@ function RepositoryList(props) {
 
 }
 
-export default RepositoryList;
+export default AllRepositoryList;

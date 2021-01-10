@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import AboutGrid from "./blocks/AboutGrid";
+import AboutGrid from "./grids/AboutGrid";
 import aboutMePost from "../res/blogposts/about-me.md";
 
 const useStyles = makeStyles((theme) => ({
