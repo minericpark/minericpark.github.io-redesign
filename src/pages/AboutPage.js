@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AboutGrid from "./grids/AboutGrid";
@@ -15,8 +15,8 @@ const useStyles = makeStyles((theme) => ({
 const post = aboutMePost;
 
 const images = [
-    '/images/personal2.jpg',
-    '/images/personal1.jpg',
+    'personal2.jpg',
+    'personal1.jpg',
 ];
 
 function AboutPage() {
