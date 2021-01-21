@@ -10,7 +10,6 @@ const useStyles = makeStyles((theme) => ({
         width: '110%',
         display: 'flex',
     },
-
 }));
 
 const transition = {
@@ -29,7 +28,7 @@ function MainImageCard(props) {
     return (
         <motion.div variants={imageVariants}>
             <Card>
-                <img className={classes.altImage} src={images[0]} alt={images[0]}/>
+                <img className={classes.altImage} src={images[0]} alt={images[0]} />
             </Card>
         </motion.div>
     );

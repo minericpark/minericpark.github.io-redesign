@@ -1,8 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AboutGrid from "./grids/AboutGrid";
 import aboutMePost from "../res/blogposts/about-me.md";
+import PropTypes from "prop-types";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -15,8 +16,8 @@ const useStyles = makeStyles((theme) => ({
 const post = aboutMePost;
 
 const images = [
-    'personal2.jpg',
-    'personal1.jpg',
+    'images/personal2.jpg',
+    'images/personal1.jpg',
 ];
 
 function AboutPage() {
@@ -35,3 +36,7 @@ function AboutPage() {
 }
 
 export default AboutPage;
+
+AboutPage.propTypes = {
+    images: PropTypes.array,
+};

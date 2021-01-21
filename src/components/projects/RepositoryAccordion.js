@@ -1,5 +1,4 @@
 import React from "react";
-import WithComponentLoading from "../common/WithComponentLoading";
 import AllRepositoryList from "./AllRepositoryList";
 import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
@@ -25,8 +24,7 @@ const accordionVariants = {
 };
 
 function RepositoryAccordion(props) {
-    const { listState } = props;
-    const ListLoading = WithComponentLoading(AllRepositoryList);
+    const { allRepos } = props;
     const classes = useStyles();
 
     return (
@@ -36,14 +34,13 @@ function RepositoryAccordion(props) {
                     expandIcon={<MdExpandMore />}
                     aria-controls="panel1a-content"
                     id="panel1a-header"
-                    className={classes.repositoryAccordionSummary}
-                >
+                    className={classes.repositoryAccordionSummary} >
                     <Typography variant="subtitle1" gutterBottom>
                         GitHub Projects
                     </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                    <ListLoading isLoading={listState.loading} repos={listState.repos} xsNum={4}/>
+                    <AllRepositoryList repos={allRepos} xsNum={4}/>
                 </AccordionDetails>
             </Accordion>
         </motion.div>

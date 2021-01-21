@@ -38,8 +38,8 @@ function App() {
                         <Header title="Minternet" sections={header.sections} key={"mainHeader"}/>
                         <AnimatePresence exitBeforeEnter initial={false}>
                             <Switch location={location} key={location.pathname}>
-                                <Route exact path="/" component={LandingPage} />
-                                <Route path="/about" component={AboutPage} />
+                                <Route exact path="/" component={LandingPage}/>
+                                <Route path="/about" component={AboutPage}/>
                                 <Route path="/projects" component={ProjectPage} />
                                 <Route path="/blog" component={BlogPage} />
                                 <Route path="/profession" component={ProfessionPage} />
