@@ -1,4 +1,5 @@
 ### minericpark.github.io full redesign
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a794872b-b8f6-4bf7-9393-cdfab046ea2c/deploy-status)](https://app.netlify.com/sites/minericpark/deploys) ![GitHub last commit](https://img.shields.io/github/last-commit/minericpark/minericpark.github.io-redesign)
 
 - Personal web application (replaced my previous personal webpage: https://minericpark.github.io)
 - Completed first iteration of development: Currently only working on patches (Bug fixes + New features)
