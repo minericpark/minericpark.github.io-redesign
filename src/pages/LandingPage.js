@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
 const titles = [
     'Welcome to my website.',
     'This background is nice, right?',
-    'This webpage is still under development',
+    'This webpage was developed using React!',
     'Helloo',
 ];
 

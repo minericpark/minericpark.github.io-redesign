@@ -1,12 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
 import BlogAccordion from "./subcomponents/BlogAccordion";
 import {motion} from "framer-motion";
-
-const useStyles = makeStyles((theme) => ({
-
-}));
 
 const transition = {
     duration: 0.5,
@@ -18,7 +13,6 @@ const blogVariants = {
 };
 
 function BlogPosts(props) {
-    const classes = useStyles();
     const { posts } = props;
 
     return (

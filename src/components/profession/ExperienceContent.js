@@ -23,7 +23,6 @@ const experienceVariants = {
 };
 
 function ExperienceContent(props) {
-    const classes = useStyles();
     const {workExperience} = props;
 
     function ImageDisplay(props) {

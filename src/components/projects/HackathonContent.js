@@ -24,16 +24,18 @@ const hackathonVariants = {
 
 function HackathonContent(props) {
     const classes = useStyles();
-    const { hackathon1 } = props;
+    const { hackathons } = props;
 
     return (
         <motion.div variants={hackathonVariants}>
             <Paper className={classes.hackathonBox} elevation={0}>
-                <Grid item>
-                    <Markdown>
-                        {hackathon1}
-                    </Markdown>
-                </Grid>
+                { hackathons.map((hackathon) => (
+                    <Grid item>
+                        <Markdown>
+                            {hackathon}
+                        </Markdown>
+                    </Grid>
+                ))}
             </Paper>
         </motion.div>
     );
@@ -43,5 +45,5 @@ function HackathonContent(props) {
 export default HackathonContent;
 
 HackathonContent.propTypes = {
-    hackathon1: PropTypes.object,
+    hackathons: PropTypes.array,
 };

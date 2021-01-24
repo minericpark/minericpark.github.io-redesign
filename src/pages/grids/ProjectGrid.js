@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 
 function ProjectGrid(props) {
     const classes = useStyles();
-    const { githubstatistics, githubmostusedlangs, hackathon1 } = props;
+    const { githubstatistics, githubmostusedlangs, hackathons } = props;
     const MainListLoading = WithComponentLoading(MainRepositoryList);
     const [listState, setListState] = useState({
         loading: false,
@@ -52,10 +52,10 @@ function ProjectGrid(props) {
                     </motion.div>
                     <PageSubtitle subtitle={'Hackathon Attendance'}/>
                     <Grid container spacing={2} alignContent='center' justify='center'>
-                        <HackathonContent hackathon1={hackathon1} />
+                        <HackathonContent hackathons={hackathons} />
                     </Grid>
                     <PageSubtitle subtitle={'All Projects'}/>
-                    <RepositoryAccordion listState={listState}/>
+                    <RepositoryAccordion allRepos={listState.repos}/>
                 </Grid>
             </Grid>
         </motion.div>

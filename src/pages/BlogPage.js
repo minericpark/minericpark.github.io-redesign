@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 const sidebarElements = {
     title: 'What\'s up with Min?',
     description:
-        'I\'m currently patching my newly hosted personal website and preparing for my first hackathon, HTN2020!',
+        'I\'m currently in school studying hard and still thinking up and working on some projects',
     archivetitle:
         'Miscellaneous Archives',
     archives: [
