@@ -1,10 +1,10 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import ProjectBlock from "./blocks/ProjectBlock";
+import ProjectGrid from "./grids/ProjectGrid";
 import githubstatistics from "../res/projectposts/githubstatistics.md";
 import githubmostusedlangs from "../res/projectposts/githubmostusedlangs.md";
-import hackathon1 from "../res/projectposts/hackathon1.md";
+import HackTheNorth from "../res/projectposts/hackathon1.md";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -27,6 +27,10 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+const hackathons = [
+    HackTheNorth,
+];
+
 function ProjectPage() {
     const classes = useStyles();
 
@@ -35,7 +39,7 @@ function ProjectPage() {
             <CssBaseline />
             <div className={classes.root} key={"mainContainer"}>
                 <main>
-                    <ProjectBlock githubstatistics={githubstatistics} githubmostusedlangs={githubmostusedlangs} hackathon1={hackathon1}/>
+                    <ProjectGrid githubstatistics={githubstatistics} githubmostusedlangs={githubmostusedlangs} hackathons={hackathons}/>
                 </main>
             </div>
         </React.Fragment>

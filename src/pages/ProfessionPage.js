@@ -6,7 +6,7 @@ import workportfolio1 from "../res/professionposts/work-experience1-2.md";
 import subtitle2 from "../res/professionposts/work-experience2.md";
 import workportfolio2 from "../res/professionposts/work-experience2-2.md";
 import educationportfolio1 from "../res/professionposts/education-experience.md";
-import ProfessionBlock from "./blocks/ProfessionBlock";
+import ProfessionGrid from "./grids/ProfessionGrid";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -35,7 +35,7 @@ function ProfessionPage() {
             <CssBaseline/>
             <div className={classes.root} key={"mainContainer"}>
                 <main>
-                    <ProfessionBlock educationExperience={educationexperience} workExperience={workexperience} resumeLink={resumelink}/>
+                    <ProfessionGrid educationExperience={educationexperience} workExperience={workexperience} resumeLink={resumelink}/>
                 </main>
             </div>
         </React.Fragment>

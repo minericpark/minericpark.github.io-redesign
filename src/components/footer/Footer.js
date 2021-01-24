@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {makeStyles} from '@material-ui/core/styles';
-import SocialsCard from "./subcomponents/SocialsCard";
-import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
+import SocialsCard from "./SocialsCard";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
+import CopyrightText from "./CopyrightText";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -20,20 +19,6 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-//Copyright content for footer
-function Copyright() {
-    return (
-        <Typography variant="body2" color="textSecondary" key={"copyright"}>
-            {'Copyright © '}
-            <Link color="inherit" href="https://www.linkedin.com/in/eric-p-422190128/" key={"copyrightLink"}>
-                Eric Minseo Park
-            </Link>{' '}
-            {new Date().getFullYear()}
-        </Typography>
-    );
-}
-
-//BlogPosts footer structure
 function Footer(props) {
     const classes = useStyles();
     const { social } = props;
@@ -45,7 +30,7 @@ function Footer(props) {
                     <SocialsCard social={social} gridDirection='row'/>
                 </Grid>
                 <Grid item key={"footerCopyright"}>
-                    <Copyright />
+                    <CopyrightText copyrightLabel={'Eric Minseo Park'} />
                 </Grid>
             </Box>
         </BottomNavigation>

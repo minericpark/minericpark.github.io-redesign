@@ -14,7 +14,11 @@ const projectVariants = {
     exit: { opacity: 0, transition },
 };
 
-function SmallRepositoryList(props) {
+const orderVariants = {
+    enter: { transition: { staggerChildren: 0.3 } },
+}
+
+function MainRepositoryList(props) {
     const { repos, xsNum, mdNum } = props;
     const noRepoMessage = 'No repositories loaded';
     const mainProjectsArray = [
@@ -29,8 +33,8 @@ function SmallRepositoryList(props) {
     }
 
     return (
-        <motion.div variants={{ enter: { transition: { staggerChildren: 0.3 } } }}>
-            <Grid container spacing={6}>
+        <motion.div variants={orderVariants}>
+            <Grid container spacing={6} >
                 {repos.filter(repo => repo.fork === false)
                     .filter(repo => repo.language != null)
                     .sort(function(a, b) {
@@ -50,4 +54,4 @@ function SmallRepositoryList(props) {
 
 }
 
-export default SmallRepositoryList;
+export default MainRepositoryList;

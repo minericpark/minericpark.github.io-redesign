@@ -1,9 +1,4 @@
 export default `
-
-# First Update And Thoughts
-
-#### July 1, 2020 by [Min](/)
-
 Hello!
 
 This is my first blogpost on my redesigned website, and I kind of wanted to go over my process of the full creation.

@@ -1,9 +1,4 @@
 export default `
-
-# Second Update and Thoughts
-
-#### December 26, 2020 by [Min](/)
-
 Hello!
 
 Wow this sure has been a while.
