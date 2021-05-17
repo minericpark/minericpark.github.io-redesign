@@ -13,8 +13,7 @@
 
 ### Getting Started/Requirements/Prerequisites/Dependencies
 - Requires a browser for testing / development
-- Hosted on: https://minericpark.netlify.app
-- Currently waiting to deploy onto a domain name
+- Hosted on: https://minericpark.software
 
 ### Installation
 - npm install
