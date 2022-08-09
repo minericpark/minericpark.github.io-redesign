@@ -24,7 +24,7 @@ was actually very enjoyable. Constant learning and challenge often paved my impr
 into completing my tasks, and accomplishing more. Being forced to organize and discipline myself further for the advancement
 of the project was also super fulfilling, and validated my investment and enjoyment in working with the company.
 
-I'm excited to see how the Phase 1 solution of the final project developes. Contributing massively to a project further 
+I'm excited to see how the Phase 1 solution of the final project develops. Contributing massively to a project further 
 increased my active interest in it, and I'd maybe even like to return to see how it ended, or what other projects are up.
 
 #### For more information on my experience: <a href="/blog">Blog</a>

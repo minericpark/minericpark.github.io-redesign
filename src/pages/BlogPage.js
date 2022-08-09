@@ -9,6 +9,8 @@ import post3 from "../res/blogposts/blog-post.3.md";
 import posttitle3 from "../res/blogposts/blog-post-title.3.md";
 import post4 from "../res/blogposts/blog-post.4.md";
 import posttitle4 from "../res/blogposts/blog-post-title.4.md";
+import post5 from "../res/blogposts/blog-post.5.md";
+import posttitle5 from "../res/blogposts/blog-post-title.5.md";
 import BlogGrid from "./grids/BlogGrid";
 
 const useStyles = makeStyles((theme) => ({
@@ -34,6 +36,10 @@ const sidebarElements = {
 };
 
 const posts = [
+    {
+        title: posttitle5,
+        content: post5,
+    },
     {
         title: posttitle4,
         content: post4,
